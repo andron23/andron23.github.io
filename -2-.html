@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Часть 2 Загрузка данных | R Course</title>
+  <meta name="description" content="2 Часть 2 Загрузка данных | R Course" />
+  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Часть 2 Загрузка данных | R Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Часть 2 Загрузка данных | R Course" />
+  
+  
+  
+
+<meta name="author" content="Alexanyan Andron" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="-1-.html"/>
+<link rel="next" href="-3-.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="-1-.html"><a href="-1-.html"><i class="fa fa-check"></i><b>1</b> Часть 1 Объекты и типы данных</a><ul>
+<li class="chapter" data-level="1.1" data-path="-1-.html"><a href="-1-.html#типы-данных-в-языке-r"><i class="fa fa-check"></i><b>1.1</b> Типы данных в языке R</a></li>
+<li class="chapter" data-level="1.2" data-path="-1-.html"><a href="-1-.html#создание-объектов"><i class="fa fa-check"></i><b>1.2</b> Создание объектов</a></li>
+<li class="chapter" data-level="1.3" data-path="-1-.html"><a href="-1-.html#структуры-данных"><i class="fa fa-check"></i><b>1.3</b> Структуры данных</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="-1-.html"><a href="-1-.html#однородные-структуры."><i class="fa fa-check"></i><b>1.3.1</b> Однородные структуры.</a></li>
+<li class="chapter" data-level="1.3.2" data-path="-1-.html"><a href="-1-.html#разнородные-структуры."><i class="fa fa-check"></i><b>1.3.2</b> Разнородные структуры.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="-1-.html"><a href="-1-.html#заключение-и-summary"><i class="fa fa-check"></i><b>1.4</b> Заключение и summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="-2-.html"><a href="-2-.html"><i class="fa fa-check"></i><b>2</b> Часть 2 Загрузка данных</a><ul>
+<li class="chapter" data-level="2.1" data-path="-2-.html"><a href="-2-.html#загрузка-txt-файлов"><i class="fa fa-check"></i><b>2.1</b> Загрузка txt-файлов</a></li>
+<li class="chapter" data-level="2.2" data-path="-2-.html"><a href="-2-.html#загрузка-csv-файлов"><i class="fa fa-check"></i><b>2.2</b> Загрузка csv-файлов</a></li>
+<li class="chapter" data-level="2.3" data-path="-2-.html"><a href="-2-.html#загрузка-xlsx-файлов"><i class="fa fa-check"></i><b>2.3</b> Загрузка xlsx-файлов</a></li>
+<li class="chapter" data-level="2.4" data-path="-2-.html"><a href="-2-.html#пакет-readr"><i class="fa fa-check"></i><b>2.4</b> Пакет readr</a></li>
+<li class="chapter" data-level="2.5" data-path="-2-.html"><a href="-2-.html#запись-в-файл"><i class="fa fa-check"></i><b>2.5</b> Запись в файл</a></li>
+<li class="chapter" data-level="2.6" data-path="-2-.html"><a href="-2-.html#как-быть-с-другими-форматами"><i class="fa fa-check"></i><b>2.6</b> Как быть с другими форматами?</a></li>
+<li class="chapter" data-level="2.7" data-path="-2-.html"><a href="-2-.html#полезные-добавления"><i class="fa fa-check"></i><b>2.7</b> Полезные добавления</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="-2-.html"><a href="-2-.html#работа-с-директориями"><i class="fa fa-check"></i><b>2.7.1</b> Работа с директориями</a></li>
+<li class="chapter" data-level="2.7.2" data-path="-2-.html"><a href="-2-.html#выбор-файла-вручную"><i class="fa fa-check"></i><b>2.7.2</b> Выбор файла вручную</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="-2-.html"><a href="-2-.html#заключение"><i class="fa fa-check"></i><b>2.8</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="-3-.html"><a href="-3-.html"><i class="fa fa-check"></i><b>3</b> Часть 3 Обработка и очистка данных</a><ul>
+<li class="chapter" data-level="3.1" data-path="-3-.html"><a href="-3-.html#подготовка-и-очистка-данных"><i class="fa fa-check"></i><b>3.1</b> Подготовка и очистка данных</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="-3-.html"><a href="-3-.html#gather-и-spread"><i class="fa fa-check"></i><b>3.1.1</b> gather() и spread()</a></li>
+<li class="chapter" data-level="3.1.2" data-path="-3-.html"><a href="-3-.html#конвейер"><i class="fa fa-check"></i><b>3.1.2</b> Конвейер %&gt;%</a></li>
+<li class="chapter" data-level="3.1.3" data-path="-3-.html"><a href="-3-.html#separate-и-unite"><i class="fa fa-check"></i><b>3.1.3</b> separate() и unite()</a></li>
+<li class="chapter" data-level="3.1.4" data-path="-3-.html"><a href="-3-.html#пропущенные-значения"><i class="fa fa-check"></i><b>3.1.4</b> Пропущенные значения</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="-3-.html"><a href="-3-.html#обработка-данных---dplyr"><i class="fa fa-check"></i><b>3.2</b> Обработка данных - dplyr</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="-3-.html"><a href="-3-.html#mutate-и-group_by"><i class="fa fa-check"></i><b>3.2.1</b> mutate() и group_by()</a></li>
+<li class="chapter" data-level="3.2.2" data-path="-3-.html"><a href="-3-.html#summarise"><i class="fa fa-check"></i><b>3.2.2</b> summarise()</a></li>
+<li class="chapter" data-level="3.2.3" data-path="-3-.html"><a href="-3-.html#filter-и-select"><i class="fa fa-check"></i><b>3.2.3</b> filter() и select()</a></li>
+<li class="chapter" data-level="3.2.4" data-path="-3-.html"><a href="-3-.html#arrange"><i class="fa fa-check"></i><b>3.2.4</b> arrange()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="-3-.html"><a href="-3-.html#заключение-1"><i class="fa fa-check"></i><b>3.3</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="-4-.html"><a href="-4-.html"><i class="fa fa-check"></i><b>4</b> Часть 4 Функции</a><ul>
+<li class="chapter" data-level="4.1" data-path="-4-.html"><a href="-4-.html#создание-пользовательских-функций"><i class="fa fa-check"></i><b>4.1</b> Создание пользовательских функций</a></li>
+<li class="chapter" data-level="4.2" data-path="-4-.html"><a href="-4-.html#анонимные-функции"><i class="fa fa-check"></i><b>4.2</b> Анонимные функции</a></li>
+<li class="chapter" data-level="4.3" data-path="-4-.html"><a href="-4-.html#заключение-2"><i class="fa fa-check"></i><b>4.3</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="-5-.html"><a href="-5-.html"><i class="fa fa-check"></i><b>5</b> Часть 5 Базовая графика</a><ul>
+<li class="chapter" data-level="5.1" data-path="-5-.html"><a href="-5-.html#линейные-графики-диаграмма-рассеяния-совмещение-графиков"><i class="fa fa-check"></i><b>5.1</b> Линейные графики, диаграмма рассеяния, совмещение графиков</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="-5-.html"><a href="-5-.html#линейные-графики"><i class="fa fa-check"></i><b>5.1.1</b> Линейные графики</a></li>
+<li class="chapter" data-level="5.1.2" data-path="-5-.html"><a href="-5-.html#совмещение-графиков"><i class="fa fa-check"></i><b>5.1.2</b> Совмещение графиков</a></li>
+<li class="chapter" data-level="5.1.3" data-path="-5-.html"><a href="-5-.html#диаграмма-рассеяния"><i class="fa fa-check"></i><b>5.1.3</b> Диаграмма рассеяния</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="-5-.html"><a href="-5-.html#гистограммы"><i class="fa fa-check"></i><b>5.2</b> Гистограммы</a></li>
+<li class="chapter" data-level="5.3" data-path="-5-.html"><a href="-5-.html#столбчатые-графики"><i class="fa fa-check"></i><b>5.3</b> Столбчатые графики</a></li>
+<li class="chapter" data-level="5.4" data-path="-5-.html"><a href="-5-.html#заключение-3"><i class="fa fa-check"></i><b>5.4</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="-6-if.html"><a href="-6-if.html"><i class="fa fa-check"></i><b>6</b> Часть 6 Циклы и оператор if</a><ul>
+<li class="chapter" data-level="6.1" data-path="-6-if.html"><a href="-6-if.html#оператор-if"><i class="fa fa-check"></i><b>6.1</b> Оператор if</a></li>
+<li class="chapter" data-level="6.2" data-path="-6-if.html"><a href="-6-if.html#цикл-for"><i class="fa fa-check"></i><b>6.2</b> Цикл for</a></li>
+<li class="chapter" data-level="6.3" data-path="-6-if.html"><a href="-6-if.html#цикл-while"><i class="fa fa-check"></i><b>6.3</b> Цикл while</a></li>
+<li class="chapter" data-level="6.4" data-path="-6-if.html"><a href="-6-if.html#заключение-4"><i class="fa fa-check"></i><b>6.4</b> Заключение</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="часть-2-загрузка-данных" class="section level1">
+<h1><span class="header-section-number">2</span> Часть 2 Загрузка данных</h1>
+<p>В предыдущей лекции мы изучили основные типы и структуры данных, теперь мы можем потихоньку переходит к работе с ними. Но для этого, в первую очередь, необходимо научиться загружать данные из внешних источников - таблиц xlsx, csv, txt и других форматов. До этого мы генерировали “эксперементальные” данные вручную, прям по мере выполнения кода, но в жизни такое будет редко - в основном, вся информация будет храниться в базах данных или табличных файлах.</p>
+<div id="загрузка-txt-файлов" class="section level2">
+<h2><span class="header-section-number">2.1</span> Загрузка txt-файлов</h2>
+<p>Пожалуй, начнем с самого простого. Пусть наша таблица хранится в обычном файле-блокноте в формате txt. Для того, чтобы загрузить такой файл, нам не нужно подключать никакие дополнительные библиотеки - все необходимые функции для работы с такими файлами уже доступны “из коробки”.</p>
+<p>Допустим, у нас есть txt-файл с таким содержимым:</p>
+<p><img src="Lesson%202_txt.png" /></p>
+<p><strong>Замечание.</strong> Обратите внимание на структуру Вашего файла - он должен содержать только одну правильно оформленную таблицу. В противном случае, могут возникать разного рода ошибки. Например, вот так делать не надо:</p>
+<p><img src="Lesson%202_wrong_txt.png" /></p>
+<p>Итак, файл готов и правильно оформлен, давайте загрузим его в среду программирования с помощью команды <code>read.table()</code>.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&#39;Lesson 2.txt&#39;</span>)</a>
+<a class="sourceLine" id="cb178-2" data-line-number="2"><span class="kw">str</span>(df)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    6 obs. of  5 variables:
+##  $ V1: Factor w/ 6 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 6 1 2 3 4 5
+##  $ V2: Factor w/ 6 levels &quot;Kolya&quot;,&quot;Petya&quot;,..: 3 5 2 1 6 4
+##  $ V3: Factor w/ 4 levels &quot;C13&quot;,&quot;C14&quot;,&quot;Group&quot;,..: 3 4 1 4 2 1
+##  $ V4: Factor w/ 3 levels &quot;F&quot;,&quot;M&quot;,&quot;Sex&quot;: 3 2 2 2 2 1
+##  $ V5: Factor w/ 4 levels &quot;18&quot;,&quot;19&quot;,&quot;20&quot;,..: 4 1 1 3 2 2</code></pre>
+<p>Обратите внимание - наша таблица загрузилась не совсем так, как нам хотелось бы:</p>
+<ul>
+<li>Названия столбцов загрузились как строка таблицы, а не как заголовки</li>
+<li>Все наши столбцы имеют тип <code>factor</code>, что будет не очень удобно в дальнейшем</li>
+</ul>
+<p>Чтобы избежать этих и многих других сложностей при загрузке, у функции <code>read.table()</code> есть большое количество аргументов. Подробнее со всеми ними Вы можете разобраться, почитав справку с помощью <code>?read.table</code>:</p>
+<p><img src="Lesson%202_readtable_about.png" /></p>
+<p>Мы же рассмотрим только несколько аргументов, которые нас интересуют в данный момент - <code>header</code> (по умолчанию стоит <code>FALSE</code>) и <code>stringAsFactors</code>.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1"><span class="co">#Читаем таблицу. Говорим, что первая строка - заголовки. Также даем команду - символьные поля не надо переводить в factor.</span></a>
+<a class="sourceLine" id="cb180-2" data-line-number="2">df &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&#39;Lesson 2.txt&#39;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb180-3" data-line-number="3"><span class="kw">str</span>(df)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  5 variables:
+##  $ ID     : int  1 2 3 4 5
+##  $ Student: chr  &quot;Vasya&quot; &quot;Petya&quot; &quot;Kolya&quot; &quot;Zhenya&quot; ...
+##  $ Group  : chr  &quot;M15&quot; &quot;C13&quot; &quot;M15&quot; &quot;C14&quot; ...
+##  $ Sex    : chr  &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; ...
+##  $ Age    : int  18 18 20 19 19</code></pre>
+<p>Теперь мы видим, что вся таблица загружена правильно - присутствуют заголовки, а текстовые поля загрузились как <code>character</code>.</p>
+<p>У <code>read.table()</code> есть еще большое количество полезных аргументов, которые Вы так или иначе будете использовать. Например, <code>sep</code> для установки знака-разделителя, <code>dec</code> для установки разделителя разряда в числах, <code>skip</code> для пропуска строк и много других. У них у всех есть значения по умолчанию, так что почитайте справку. Либо же придется набивать шишки на опыте :)</p>
+</div>
+<div id="загрузка-csv-файлов" class="section level2">
+<h2><span class="header-section-number">2.2</span> Загрузка csv-файлов</h2>
+<p>А что если наша таблица хранится в виде csv-файла? Не проблема - у нас также прям в базовом функционале есть функция для чтения csv-файлов: <code>read.csv()</code>.</p>
+<p>Она своими аргументами очень похожа на <code>read.table()</code>, поэтому сильно подробно останавливаться на этом не будем. При необходимости, открываем справку <code>?read.csv</code>, а мы пока рассмотрим пример.</p>
+<p>Пусть у нас есть такой csv-файл:</p>
+<p><img src="Lesson%202_csv_file_example.png" /></p>
+<p>Давайте попробуем загрузить его с помощью <code>read.csv()</code>:</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;Lesson 2.csv&#39;</span>)</a>
+<a class="sourceLine" id="cb182-2" data-line-number="2">df</a></code></pre></div>
+<pre><code>##   ID.Student.Group.Sex.Age
+## 1         1;Vasya;M15;M;18
+## 2         2;Petya;C13;M;18
+## 3         3;Kolya;M15;M;20
+## 4        4;Zhenya;C14;M;19
+## 5         5;Sveta;C13;F;19</code></pre>
+<p>Вы видите, что все наши данные загрузились в один столбик - т.е. у нас получилась не таблица, а один столбец. Почему так? Все просто - по умолчанию у функции <code>read.csv()</code> аргумент <code>sep = &quot;,&quot;</code>. А в нашей таблице разделители - <code>&quot;;&quot;</code>. Соответственно, указываем дополнительный аргумент <code>sep</code> при загрузке, а также добавляем <code>stringAsFactors</code> и все становится правильно:</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&#39;Lesson 2.csv&#39;</span>, <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb184-2" data-line-number="2"><span class="kw">str</span>(df)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  5 variables:
+##  $ ID     : int  1 2 3 4 5
+##  $ Student: chr  &quot;Vasya&quot; &quot;Petya&quot; &quot;Kolya&quot; &quot;Zhenya&quot; ...
+##  $ Group  : chr  &quot;M15&quot; &quot;C13&quot; &quot;M15&quot; &quot;C14&quot; ...
+##  $ Sex    : chr  &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; ...
+##  $ Age    : int  18 18 20 19 19</code></pre>
+<p>Теперь наша таблица загрузилась правильно - и заголовки есть, и все поля загрузились с правильным типом данных.</p>
+</div>
+<div id="загрузка-xlsx-файлов" class="section level2">
+<h2><span class="header-section-number">2.3</span> Загрузка xlsx-файлов</h2>
+<p>С файлами Microsoft Excel все чуть более интересно - таблицы <code>xlsx</code> формата встречаются очень часто, а вот функции для загрузки таких файлов в стандартном наборе нет. Но не проблема - достаточно подключить какую-ниубдь библиотеку и это решит все наши проблемы!</p>
+<p>Лично мне нравится библиотека <code>xlsx</code>:</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" data-line-number="1"><span class="co">#Устанавливаем пакет xlsx</span></a>
+<a class="sourceLine" id="cb186-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&#39;xlsx&#39;</span>)</a>
+<a class="sourceLine" id="cb186-3" data-line-number="3"><span class="co">#Подключаем установленный пакет</span></a>
+<a class="sourceLine" id="cb186-4" data-line-number="4"><span class="kw">library</span>(xlsx)</a></code></pre></div>
+<p>Далее все просто - теперь мы можем считывать наши xlsx-файлы с помощью функции <code>read.xlsx()</code>. Пусть у нас есть такой файл:</p>
+<p><img src="Lesson%202_xlsx_example.png" /></p>
+<p>Загрузим его в рабочую среду с помощью функции <code>read.xlsx()</code>.</p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb187-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">read.xlsx</span>(<span class="dt">file =</span> <span class="st">&#39;Lesson 2.xlsx&#39;</span>, <span class="dt">sheetIndex =</span> <span class="dv">1</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb187-2" data-line-number="2"><span class="kw">str</span>(df)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  5 variables:
+##  $ ID     : num  1 2 3 4 5
+##  $ Student: chr  &quot;Vasya&quot; &quot;Petya&quot; &quot;Kolya&quot; &quot;Zhenya&quot; ...
+##  $ Group  : chr  &quot;M15&quot; &quot;C13&quot; &quot;M15&quot; &quot;C14&quot; ...
+##  $ Sex    : chr  &quot;M&quot; &quot;M&quot; &quot;M&quot; &quot;M&quot; ...
+##  $ Age    : num  18 18 20 19 19</code></pre>
+<p>Здесь обязательных агрументов 2 - <code>file</code> и <code>sheetIndex</code> - порядковый номер листа в книге Excel. Также мы можем указывать дополнительные аргументы, например:</p>
+<ul>
+<li><code>sheetName</code> - вместо номера листа можем указать его имя</li>
+<li><code>rowIndex</code> - номера строк, которые мы хотим загрузить с листа</li>
+<li><code>colIndex</code> - номера столбцов, которые мы хотим загрузить с листа</li>
+<li><code>header</code> - загружать ли заголовки?</li>
+<li><code>encoding</code> - кодировка</li>
+<li>многое другое, как специфичных аргументов функции <code>read.xlsx()</code>, так и общих для всего семейства функций <code>read.какой-то формат()</code></li>
+</ul>
+<p>Еще один вариант загрузки xslx-файлов в рабочую среду - использовать пакет <code>readxl</code>. Основное отличие функции <code>read_excel()</code> от <code>read.xlsx()</code> из пакета <code>xlsx</code>, который мы только что рассмотрели, - результат мы получаем не в виде фрейма, а в виде специального табличного формата - <code>tibble</code>. Сам по себе <code>tibble</code> - как бы более удобный вариант <code>data frame</code>, который был создан разработчиками языка <code>R</code> специально для удобства и функциональности обработки данных. Вокруг этого формата построено целое семейство пакетов для загрузки, очистки и обработки данных - пакеты <code>tidyverse</code>.</p>
+<p>Загрузим нашу таблицу с помощью <code>read_excel()</code> из пакета <code>readxl</code>.</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb189-1" data-line-number="1"><span class="co">#Устанавливаем пакет xlsx</span></a>
+<a class="sourceLine" id="cb189-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">&#39;readxl&#39;</span>)</a>
+<a class="sourceLine" id="cb189-3" data-line-number="3"><span class="co">#Подключаем установленный пакет</span></a>
+<a class="sourceLine" id="cb189-4" data-line-number="4"><span class="kw">library</span>(readxl)</a></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&#39;Lesson 2.xlsx&#39;</span>)</a>
+<a class="sourceLine" id="cb190-2" data-line-number="2">df</a></code></pre></div>
+<pre><code>## # A tibble: 5 x 5
+##      ID Student Group Sex     Age
+##   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;
+## 1     1 Vasya   M15   M        18
+## 2     2 Petya   C13   M        18
+## 3     3 Kolya   M15   M        20
+## 4     4 Zhenya  C14   M        19
+## 5     5 Sveta   C13   F        19</code></pre>
+<p>Обратите внимание, мы не указали никаких дополнительных аргументов, но все загрузилось правильно - и заголовки, и формат данных везде правильный. Именно под это и заточены функции из пакетов <code>tidyverse</code> - максимально облегчить жизнь аналитикам и исследователям.</p>
+</div>
+<div id="пакет-readr" class="section level2">
+<h2><span class="header-section-number">2.4</span> Пакет readr</h2>
+<p>Пакет <a href="https://rawgit.com/rstudio/cheatsheets/master/data-import.pdf"><code>readr</code></a> - специальная библиотека из семейства <code>tidyverse</code> для загрузки и сохранения данных. Позволяет считывать файлы с табличной структурой (например, csv-файлы) или файлы с произвольной структурой (например, чтение произвольных строк с записью в вектор), а также записывать результаты в файлы самых разных форматов с помощью функций <code>write_формат()</code>.</p>
+<p>Из особенностей этой библиотеки - например, она как бы “угадывает” тип данных в каждом столбце таблицы и выполняет преобразование, если нужно. Именно поэтому в предыдущем примере нам не пришлось указывать аргумент <code>stringsAsFactors</code> для корректной работы, ведь пакет <code>readxl</code> построен по тому же принципу!</p>
+</div>
+<div id="запись-в-файл" class="section level2">
+<h2><span class="header-section-number">2.5</span> Запись в файл</h2>
+<p>Ранее мы говорили с Вами о загрузке данных в систему, но что насчет выгрузки? Как сохранять результаты своей работы в виде таблиц или файлов разного формата?</p>
+<p>Как и для загрузки, для этого существует большое количество функций из разных библиотек - некоторые идут в базовом наборе, некоторые нужно подключать с отдельными пакетами, некоторые включены в пакет <code>readr</code>. Учитывая, что логика записи такая же, как у чтения, давайте просто рассмотрим несколько примеров.</p>
+<p>Для начала, сгенерируем фрейм, который будем записывать:</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb192-2" data-line-number="2">  <span class="dt">ID =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, </a>
+<a class="sourceLine" id="cb192-3" data-line-number="3">  <span class="dt">Name =</span> <span class="kw">c</span>(<span class="st">&quot;Name1&quot;</span>, <span class="st">&quot;Name2&quot;</span>, <span class="st">&quot;Name3&quot;</span>), </a>
+<a class="sourceLine" id="cb192-4" data-line-number="4">  <span class="dt">Age =</span> <span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>))</a>
+<a class="sourceLine" id="cb192-5" data-line-number="5">df</a></code></pre></div>
+<pre><code>##   ID  Name Age
+## 1  1 Name1  20
+## 2  2 Name2  30
+## 3  3 Name3  40</code></pre>
+<p>Теперь запишем cозданный фрейм в разные форматы: txt, csv и xlsx, - и посмотрим, что получилось.</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" data-line-number="1"><span class="co">#Стандартная функция из базового пакета</span></a>
+<a class="sourceLine" id="cb194-2" data-line-number="2"><span class="kw">write.table</span>(df, <span class="st">&#39;frame.txt&#39;</span>)</a></code></pre></div>
+<p><img src="frame_to_txt.png" /></p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" data-line-number="1"><span class="co">#Функция write_csv из пакета readr</span></a>
+<a class="sourceLine" id="cb195-2" data-line-number="2"><span class="kw">write_csv</span>(df, <span class="st">&#39;frame.csv&#39;</span>)</a></code></pre></div>
+<p><img src="frame_to_csv.png" /></p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" data-line-number="1"><span class="co">#Функция write.xlsx из пакета xlsx</span></a>
+<a class="sourceLine" id="cb196-2" data-line-number="2"><span class="kw">write.xlsx</span>(df, <span class="st">&#39;frame.xlsx&#39;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="frame_to_xlsx.png" /></p>
+<p>Как Вы видите, ничего сложного нет. В общем случае достаточно указать просто <em>что мы записываем</em> и <em>куда мы записываем</em>. Естественно, есть и множество дополнительных аргументов - номера и названия листов (в случае книг Excel), именование строк и столбцов, кодировки, режим добавления строк/перезаписи и многое другое! Подробней ознакомиться с каждой функцией с помощью справки и на официальных сайтах каждой библиотеки (если такие имеются).</p>
+</div>
+<div id="как-быть-с-другими-форматами" class="section level2">
+<h2><span class="header-section-number">2.6</span> Как быть с другими форматами?</h2>
+<p>У Вас может возникнуть резонный вопрос - а как быть с другими форматами данных? Не всегда же информация хранится в таблицах - бывают различные SPSS и SAS - файлы, json, XML, HTML, базы данных и разные другие форматы. Общая рекомендация такая - используем специальные библиотеки. Практически на все самые популярные форматы и источники есть какие-то пакеты и обертки, позволяющие достаточно просто и удобно работать с этими источниками. Например:</p>
+<ul>
+<li>пакет <code>haven</code> для SPSS, Stata и SAS файлов</li>
+<li>пакет <code>jsonlite</code> для json</li>
+<li><code>xml2</code> для XML</li>
+<li><code>rvest</code> для HTML</li>
+</ul>
+<p>Само собой, все исходит от Вашей задачи и библиотеку нужно подбирать под Ваши конкретные потребности. Все придет с опытом :)</p>
+</div>
+<div id="полезные-добавления" class="section level2">
+<h2><span class="header-section-number">2.7</span> Полезные добавления</h2>
+<p>Хотелось бы обратить Ваше внимание еще на несколько полезных вещей, которые напрямую с нашей темой не связаны, но определенные проблемы и вопросы могут вызывать.</p>
+<div id="работа-с-директориями" class="section level3">
+<h3><span class="header-section-number">2.7.1</span> Работа с директориями</h3>
+<p>Во всех функциях при загрузке-выгрузке данных мы указываем путь к файлу. Однако, во всех примерах мы предполагали, что наши файлы лежат в рабочей папке. И тут возникают два вопроса:</p>
+<ul>
+<li>Как узнать, какая папка рабочая?</li>
+<li>Как поменять рабочую папку?</li>
+</ul>
+<p>Естественно, Вы можете каждый раз до каждого файла прописывать полный путь, например, “C:1Course.txt”. Однако, сами понимаете, это не особо удобно. Если у нас все рабочие файлы лежат плюс-минус в одной папке, почему бы просто не сделать ее рабочей?</p>
+<p>Итак, отвечаем на первый вопрос: чтобы узнать, какая директория у нас рабочая, нужно использовать команду <code>getwd()</code>:</p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" data-line-number="1"><span class="kw">getwd</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/Андрон/Desktop/R Course&quot;</code></pre>
+<p>Отвечаем на второй вопрос: чтобы поменять рабочую директорию, достаточно использовать команду <code>setwd()</code> с указанием пути до желаемой рабочей директории.</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" data-line-number="1"><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/Андрон/Desktop&quot;</span>)</a>
+<a class="sourceLine" id="cb199-2" data-line-number="2"><span class="kw">getwd</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/Андрон/Desktop&quot;</code></pre>
+<p>Или так:</p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" data-line-number="1"><span class="kw">setwd</span>(<span class="st">&quot;../&quot;</span>)</a>
+<a class="sourceLine" id="cb201-2" data-line-number="2"><span class="kw">getwd</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;C:/Users/Андрон/Desktop&quot;</code></pre>
+<p>Конструкция <code>&quot;../&quot;</code> значит, что мы выходим из текущей папки на один уровень вверх. Так мы можем делать, если нам известна структура наших папок. Я знаю, что папка <code>R Course</code>, в которой лежит мой проект, находится в папке <code>Desktop</code>. Соответственно, я просто поднимаюсь на один уровень выше, и теперь моя рабочая папка - <code>Desktop</code>.</p>
+<p>Зная эти две команды, Вы сможете гибко настраивать рабочие директории. По такому же принципу Вы можете прописывать и пути в функциях загрузки/сохранения. Например, чтобы сохранить наш фрейм не в рабочую папку, а в <code>Desktop</code>, мне надо прописать:</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" data-line-number="1"><span class="kw">write.xlsx</span>(df, <span class="st">&#39;../frame.xlsx&#39;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p>Мы изменили путь к файлу <code>frame.xlsx</code> и теперь он появится не в рабочей директории, а в нужной папке.</p>
+</div>
+<div id="выбор-файла-вручную" class="section level3">
+<h3><span class="header-section-number">2.7.2</span> Выбор файла вручную</h3>
+<p>А что, если Вам нужно реализовать какую-то программу, которая будет загружать файл не по названию, а после того, как Вы его выбрали? Не проблема! Для этого существует специальная функция <code>choose.files()</code>. Работает она очень просто:</p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" data-line-number="1"><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="kw">choose.files</span>())</a></code></pre></div>
+<p>После чего перед Вами появляется стандартное окошко выбора файлов:</p>
+<p><img src="Lesson%202%20choose_files.png" /></p>
+<p>Таким образом, Вы сможете выбирать все нужные Вам файлы вручную. Такая функция может потребоваться, например, при разработке каких-то аналитических приложений.</p>
+</div>
+</div>
+<div id="заключение" class="section level2">
+<h2><span class="header-section-number">2.8</span> Заключение</h2>
+<p>Мы рассмотрели весь основной функционал загрузки и сохранения данных с помощью функций R и различных пакетов достаточно подробно. Теперь мы можем переходить на следующую стадию - обработка данных.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="-1-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="-3-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"theme": "readable",
+"highlight": "textmate",
+"split_by": "rmd",
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

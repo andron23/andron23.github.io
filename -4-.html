@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Часть 4 Функции | R Course</title>
+  <meta name="description" content="4 Часть 4 Функции | R Course" />
+  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Часть 4 Функции | R Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Часть 4 Функции | R Course" />
+  
+  
+  
+
+<meta name="author" content="Alexanyan Andron" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="-3-.html"/>
+<link rel="next" href="-5-.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="-1-.html"><a href="-1-.html"><i class="fa fa-check"></i><b>1</b> Часть 1 Объекты и типы данных</a><ul>
+<li class="chapter" data-level="1.1" data-path="-1-.html"><a href="-1-.html#типы-данных-в-языке-r"><i class="fa fa-check"></i><b>1.1</b> Типы данных в языке R</a></li>
+<li class="chapter" data-level="1.2" data-path="-1-.html"><a href="-1-.html#создание-объектов"><i class="fa fa-check"></i><b>1.2</b> Создание объектов</a></li>
+<li class="chapter" data-level="1.3" data-path="-1-.html"><a href="-1-.html#структуры-данных"><i class="fa fa-check"></i><b>1.3</b> Структуры данных</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="-1-.html"><a href="-1-.html#однородные-структуры."><i class="fa fa-check"></i><b>1.3.1</b> Однородные структуры.</a></li>
+<li class="chapter" data-level="1.3.2" data-path="-1-.html"><a href="-1-.html#разнородные-структуры."><i class="fa fa-check"></i><b>1.3.2</b> Разнородные структуры.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="-1-.html"><a href="-1-.html#заключение-и-summary"><i class="fa fa-check"></i><b>1.4</b> Заключение и summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="-2-.html"><a href="-2-.html"><i class="fa fa-check"></i><b>2</b> Часть 2 Загрузка данных</a><ul>
+<li class="chapter" data-level="2.1" data-path="-2-.html"><a href="-2-.html#загрузка-txt-файлов"><i class="fa fa-check"></i><b>2.1</b> Загрузка txt-файлов</a></li>
+<li class="chapter" data-level="2.2" data-path="-2-.html"><a href="-2-.html#загрузка-csv-файлов"><i class="fa fa-check"></i><b>2.2</b> Загрузка csv-файлов</a></li>
+<li class="chapter" data-level="2.3" data-path="-2-.html"><a href="-2-.html#загрузка-xlsx-файлов"><i class="fa fa-check"></i><b>2.3</b> Загрузка xlsx-файлов</a></li>
+<li class="chapter" data-level="2.4" data-path="-2-.html"><a href="-2-.html#пакет-readr"><i class="fa fa-check"></i><b>2.4</b> Пакет readr</a></li>
+<li class="chapter" data-level="2.5" data-path="-2-.html"><a href="-2-.html#запись-в-файл"><i class="fa fa-check"></i><b>2.5</b> Запись в файл</a></li>
+<li class="chapter" data-level="2.6" data-path="-2-.html"><a href="-2-.html#как-быть-с-другими-форматами"><i class="fa fa-check"></i><b>2.6</b> Как быть с другими форматами?</a></li>
+<li class="chapter" data-level="2.7" data-path="-2-.html"><a href="-2-.html#полезные-добавления"><i class="fa fa-check"></i><b>2.7</b> Полезные добавления</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="-2-.html"><a href="-2-.html#работа-с-директориями"><i class="fa fa-check"></i><b>2.7.1</b> Работа с директориями</a></li>
+<li class="chapter" data-level="2.7.2" data-path="-2-.html"><a href="-2-.html#выбор-файла-вручную"><i class="fa fa-check"></i><b>2.7.2</b> Выбор файла вручную</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="-2-.html"><a href="-2-.html#заключение"><i class="fa fa-check"></i><b>2.8</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="-3-.html"><a href="-3-.html"><i class="fa fa-check"></i><b>3</b> Часть 3 Обработка и очистка данных</a><ul>
+<li class="chapter" data-level="3.1" data-path="-3-.html"><a href="-3-.html#подготовка-и-очистка-данных"><i class="fa fa-check"></i><b>3.1</b> Подготовка и очистка данных</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="-3-.html"><a href="-3-.html#gather-и-spread"><i class="fa fa-check"></i><b>3.1.1</b> gather() и spread()</a></li>
+<li class="chapter" data-level="3.1.2" data-path="-3-.html"><a href="-3-.html#конвейер"><i class="fa fa-check"></i><b>3.1.2</b> Конвейер %&gt;%</a></li>
+<li class="chapter" data-level="3.1.3" data-path="-3-.html"><a href="-3-.html#separate-и-unite"><i class="fa fa-check"></i><b>3.1.3</b> separate() и unite()</a></li>
+<li class="chapter" data-level="3.1.4" data-path="-3-.html"><a href="-3-.html#пропущенные-значения"><i class="fa fa-check"></i><b>3.1.4</b> Пропущенные значения</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="-3-.html"><a href="-3-.html#обработка-данных---dplyr"><i class="fa fa-check"></i><b>3.2</b> Обработка данных - dplyr</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="-3-.html"><a href="-3-.html#mutate-и-group_by"><i class="fa fa-check"></i><b>3.2.1</b> mutate() и group_by()</a></li>
+<li class="chapter" data-level="3.2.2" data-path="-3-.html"><a href="-3-.html#summarise"><i class="fa fa-check"></i><b>3.2.2</b> summarise()</a></li>
+<li class="chapter" data-level="3.2.3" data-path="-3-.html"><a href="-3-.html#filter-и-select"><i class="fa fa-check"></i><b>3.2.3</b> filter() и select()</a></li>
+<li class="chapter" data-level="3.2.4" data-path="-3-.html"><a href="-3-.html#arrange"><i class="fa fa-check"></i><b>3.2.4</b> arrange()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="-3-.html"><a href="-3-.html#заключение-1"><i class="fa fa-check"></i><b>3.3</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="-4-.html"><a href="-4-.html"><i class="fa fa-check"></i><b>4</b> Часть 4 Функции</a><ul>
+<li class="chapter" data-level="4.1" data-path="-4-.html"><a href="-4-.html#создание-пользовательских-функций"><i class="fa fa-check"></i><b>4.1</b> Создание пользовательских функций</a></li>
+<li class="chapter" data-level="4.2" data-path="-4-.html"><a href="-4-.html#анонимные-функции"><i class="fa fa-check"></i><b>4.2</b> Анонимные функции</a></li>
+<li class="chapter" data-level="4.3" data-path="-4-.html"><a href="-4-.html#заключение-2"><i class="fa fa-check"></i><b>4.3</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="-5-.html"><a href="-5-.html"><i class="fa fa-check"></i><b>5</b> Часть 5 Базовая графика</a><ul>
+<li class="chapter" data-level="5.1" data-path="-5-.html"><a href="-5-.html#линейные-графики-диаграмма-рассеяния-совмещение-графиков"><i class="fa fa-check"></i><b>5.1</b> Линейные графики, диаграмма рассеяния, совмещение графиков</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="-5-.html"><a href="-5-.html#линейные-графики"><i class="fa fa-check"></i><b>5.1.1</b> Линейные графики</a></li>
+<li class="chapter" data-level="5.1.2" data-path="-5-.html"><a href="-5-.html#совмещение-графиков"><i class="fa fa-check"></i><b>5.1.2</b> Совмещение графиков</a></li>
+<li class="chapter" data-level="5.1.3" data-path="-5-.html"><a href="-5-.html#диаграмма-рассеяния"><i class="fa fa-check"></i><b>5.1.3</b> Диаграмма рассеяния</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="-5-.html"><a href="-5-.html#гистограммы"><i class="fa fa-check"></i><b>5.2</b> Гистограммы</a></li>
+<li class="chapter" data-level="5.3" data-path="-5-.html"><a href="-5-.html#столбчатые-графики"><i class="fa fa-check"></i><b>5.3</b> Столбчатые графики</a></li>
+<li class="chapter" data-level="5.4" data-path="-5-.html"><a href="-5-.html#заключение-3"><i class="fa fa-check"></i><b>5.4</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="-6-if.html"><a href="-6-if.html"><i class="fa fa-check"></i><b>6</b> Часть 6 Циклы и оператор if</a><ul>
+<li class="chapter" data-level="6.1" data-path="-6-if.html"><a href="-6-if.html#оператор-if"><i class="fa fa-check"></i><b>6.1</b> Оператор if</a></li>
+<li class="chapter" data-level="6.2" data-path="-6-if.html"><a href="-6-if.html#цикл-for"><i class="fa fa-check"></i><b>6.2</b> Цикл for</a></li>
+<li class="chapter" data-level="6.3" data-path="-6-if.html"><a href="-6-if.html#цикл-while"><i class="fa fa-check"></i><b>6.3</b> Цикл while</a></li>
+<li class="chapter" data-level="6.4" data-path="-6-if.html"><a href="-6-if.html#заключение-4"><i class="fa fa-check"></i><b>6.4</b> Заключение</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="часть-4-функции" class="section level1">
+<h1><span class="header-section-number">4</span> Часть 4 Функции</h1>
+<p>В этом уроке мы будем обсуждать с Вами функции. На самом деле, с функциями мы с Вами работали с первого урока - даже стандартная <code>is.numeric()</code> - тоже функция, просто встроенные. Мы же обсудим, как создавать свои собственные пользователькие функции и как ими пользоваться потом.</p>
+<p>Давайте для начала немного формализуем и дадим определение, а что же вообще такое функция? Остановимся на таком определении:</p>
+<p><strong>Функция</strong> - некоторый блок кода, выполняющий определенные операции, к которому можно обратиться в любом месте программы.</p>
+<p>Вообще говоря, считается, что функция должна быть именованным блоком кода, но во многих языках программирования (в том числе R) это не обязательно - допускаются безымянные функции. Об этом поговорим подробней чуть позже, а пока начнем с создания пользовательских функций.</p>
+<div id="создание-пользовательских-функций" class="section level2">
+<h2><span class="header-section-number">4.1</span> Создание пользовательских функций</h2>
+<p>Мы создаем функцию, когда у нас есть некоторая последовательность действий, которую нам нужно будет выполнять периодически. Редко бывает, что однократное действие мы “засовываем” в функцию. Однако, это уже рассуждения из другого раздела - мы тут не обсуждаем, как правильно и красиво программировать, для этого существуют отдельные умные книжки. Мы тут говорим, как программировать удобно :)</p>
+<p>Итак, допустим у нас есть какая-то операция, которую нам периодически нужно выполнять и смотреть на результат. Пусть результат этой операции зависит от входных данных. Как создать функцию, чтобы каждый раз не писать полностью набор нужных нам команд, а просто ссылаться на функцию и указывать необходимые аргументы?</p>
+<p>Общая структура такая:</p>
+<pre><code>имя_функции &lt;- function(аргумент_1, аргумент_2...){
+
+тело функции: набор команд с использованием аргумент_1, аргумент_2...
+
+результат функции
+
+}</code></pre>
+<p>Давайте создадим простейшую функцию, которая будет считать квадрат заданного числа.</p>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb252-1" data-line-number="1">square &lt;-<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb252-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb252-3" data-line-number="3">  res &lt;-<span class="st"> </span>x<span class="op">**</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb252-4" data-line-number="4">  <span class="kw">return</span>(res)</a>
+<a class="sourceLine" id="cb252-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb252-6" data-line-number="6">}</a></code></pre></div>
+<p>Мы создали функцию <code>square()</code>, которая принимает на вход некоторое число <code>x</code>, потом считает квадрат этого числа и возвращает результат. Теперь мы можем обратиться к этой функции, чтобы посчитать квадрат любого числа:</p>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb253-1" data-line-number="1"><span class="kw">square</span>(<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb255-1" data-line-number="1"><span class="kw">square</span>(<span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## [1] 25</code></pre>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb257-1" data-line-number="1"><span class="kw">square</span>(<span class="fl">105.6</span>)</a></code></pre></div>
+<pre><code>## [1] 11151.36</code></pre>
+<p>Кстати говоря, мы могли бы создать эту функцию даже короче:</p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb259-1" data-line-number="1">square &lt;-<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb259-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb259-3" data-line-number="3">  <span class="kw">return</span>(x<span class="op">**</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb259-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb259-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb259-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb259-7" data-line-number="7"><span class="kw">square</span>(<span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## [1] 25</code></pre>
+<p>Здесь мы пропускаем стадию с вычислением <code>res</code> внутри функции и сразу возвращаем значение квадрата. Если конструкция небольшая, иногда это бывает удобно, а иногда наоборот сознательно разбиваешь большой кусок кода на отдельные строки для наглядности и удобства восприятия. Одним словом - все индивидуально.</p>
+<p>Еще один момент - функция не обязательно должна принимать на вход аргументы. Например, давайте создадим функцию, которая генерирует вектор случайной длины.</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb261-1" data-line-number="1">randvec &lt;-<span class="st"> </span><span class="cf">function</span>(){</a>
+<a class="sourceLine" id="cb261-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb261-3" data-line-number="3">  len &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">1</span>) <span class="co">#генерируем случайное число от 1 до 100</span></a>
+<a class="sourceLine" id="cb261-4" data-line-number="4">  vec &lt;-<span class="st"> </span><span class="kw">runif</span>(len) <span class="co">#генерируем равномерно распределенные числа в количестве len штук</span></a>
+<a class="sourceLine" id="cb261-5" data-line-number="5">  <span class="kw">return</span>(vec)</a>
+<a class="sourceLine" id="cb261-6" data-line-number="6">  </a>
+<a class="sourceLine" id="cb261-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb261-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb261-9" data-line-number="9"><span class="kw">randvec</span>()</a></code></pre></div>
+<pre><code>##  [1] 0.60134914 0.05107386 0.87320239 0.86475124 0.32538372 0.66996265
+##  [7] 0.41101605 0.23654392 0.42425594 0.03923684 0.95201882 0.69617165
+## [13] 0.46441012 0.86606167 0.10797162 0.94074084 0.38008263 0.45244028
+## [19] 0.82833701 0.66578584 0.55809634 0.34587295 0.20169170 0.38591883
+## [25] 0.85350079 0.62413265 0.28450356 0.87236919 0.42183718 0.92739264
+## [31] 0.30268550 0.87468335 0.17492930 0.50543165 0.29468914 0.12640600
+## [37] 0.92561546 0.31441019 0.11914547 0.45146772 0.56621518 0.32715206
+## [43] 0.56216805 0.23079998 0.01972805 0.33155685 0.91958073 0.60353813
+## [49] 0.03443872 0.05915550 0.30452741 0.96867252 0.46683909 0.45430068
+## [55] 0.46523895 0.46087355 0.74938695 0.95910654 0.86046143 0.12013579
+## [61] 0.18878619 0.94168438 0.55393996 0.91858438 0.50229519 0.57511711
+## [67] 0.72140624 0.19630741 0.66833383 0.19247472 0.26343141 0.92927447
+## [73] 0.37069379 0.38865041 0.33344703 0.29699531 0.89407385 0.05192506
+## [79] 0.05260951</code></pre>
+<p>Что еще из интересного - функция может не возвращать ничего с помощью <code>return()</code>, а просто делать какое-то действие. Например, записывать в файл или выводить на экран. Давайте создадим функцию, которая выводит на экран фразу <code>&quot;Привет! Мне х лет!&quot;</code>, где <code>х</code> - аргумент функции.</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb263-1" data-line-number="1">hello &lt;-<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb263-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb263-3" data-line-number="3">  <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Привет! Мне &quot;</span>, x,<span class="st">&quot; лет!&quot;</span>))</a>
+<a class="sourceLine" id="cb263-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb263-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb263-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb263-7" data-line-number="7"><span class="kw">hello</span>(<span class="dv">47</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;Привет! Мне  47  лет!&quot;</code></pre>
+<p>Еще один момент - мы неоднократно сталкивались, когда у функции какие-то значения стоят по умолчанию. А мы так можем сделать? Конечно можем, причем очень просто! Создадим функцию, которая генерирует <code>x</code> чисел подряд (начиная с 1), а потом вычисляет некоторую степень этих чисел. По умолчанию поставим куб.</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb265-1" data-line-number="1">pow &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">power =</span> <span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb265-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb265-3" data-line-number="3">  vec &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span>x</a>
+<a class="sourceLine" id="cb265-4" data-line-number="4">  <span class="kw">return</span>(vec<span class="op">**</span>power)</a>
+<a class="sourceLine" id="cb265-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb265-6" data-line-number="6">}</a></code></pre></div>
+<p>А теперь посмотрим, что будет, если мы не будем указывать аргумент <code>power</code> или укажем его в явном виде:</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb266-1" data-line-number="1"><span class="kw">pow</span>(<span class="dv">5</span>) <span class="co">#Создаем вектор 1:5 и возводим в куб (по умолчанию)</span></a></code></pre></div>
+<pre><code>## [1]   1   8  27  64 125</code></pre>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb268-1" data-line-number="1"><span class="kw">pow</span>(<span class="dv">5</span>,<span class="dv">2</span>) <span class="co">#Создаем вектор 1:5 и возводим в квадрат - указали параметр power в явном виде</span></a></code></pre></div>
+<pre><code>## [1]  1  4  9 16 25</code></pre>
+</div>
+<div id="анонимные-функции" class="section level2">
+<h2><span class="header-section-number">4.2</span> Анонимные функции</h2>
+<p>Иногда бывет ситуация, что нужно применить какую-то функцию к набору данных, а среди стандартных этой функции нет. Что делать? Заводит новую и только потом применять? А если она нам больше не понадобится, зачем код загрязнять? Это все очень резонные вопросы, на самом деле, и ответ на них есть - безымянные (или анонимные) функции.</p>
+<p>Единственное, чем отличаются анонимные функции от обычных - они не присваиваются никакой переменной, они просто выполняются и забываются системой. Если нам не нужно больше к этой функции обращаться - такой вариант нам очень подходит.</p>
+<p>Синтаксис такой: <code>function(аргументы) тело</code>.</p>
+<p>Давайте рассмотрим на примере - подключим стандартный набор данных <code>cars</code>, который содержит всего два столбца - скорость и тормозной путь; рассчитаем средние значения обоих столбцов, а потом посчитаем куб получившихся значений. Не спрашивайте зачем. Просто так, для примера :)</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb270-1" data-line-number="1"><span class="kw">data</span>(cars) <span class="co">#Подключаем данные</span></a>
+<a class="sourceLine" id="cb270-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb270-3" data-line-number="3">cars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb270-4" data-line-number="4"><span class="st">  </span><span class="kw">summarise_all</span>(<span class="kw">list</span>(mean)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#Считаем среднее по каждому столбцу</span></a>
+<a class="sourceLine" id="cb270-5" data-line-number="5"><span class="st">  </span><span class="kw">summarise_all</span>(<span class="cf">function</span>(x)x<span class="op">**</span><span class="dv">3</span>) <span class="co">#Возводим результат в куб</span></a></code></pre></div>
+<pre><code>##      speed     dist
+## 1 3652.264 79396.11</code></pre>
+<p>Вы видите, что безымянная функция <code>function(x)x**3</code> позволила нам, не создавая отдельную именованную функцию, произвести вычисление. Это очень удобно и достаточно часто встречается при работе с пакетом <code>dplyr</code>, при применении функция семейства <code>sapply()</code>, <code>lapply()</code> и много когда еще.</p>
+</div>
+<div id="заключение-2" class="section level2">
+<h2><span class="header-section-number">4.3</span> Заключение</h2>
+<p>В этом уроке мы научились</p>
+<ul>
+<li>создавать именованные функции</li>
+<li>создавать функции с аргументами по умолчанию</li>
+<li>создавать функции, которые не возвращают значение</li>
+<li>работать с анонимными функциями</li>
+</ul>
+<p>Это та основа, которая необходима каждому исследователю в ежедневной работе - функции помогают сделать Ваш код чище и красивей, при этом сократив количество строк за счет оптимизации повторяющихся действий. Качество кода, на самом деле, немаловажный момент. Новичок на это может не обращать внимания, но любой профессионал или просто опытный специалист легко определит Ваш уровень по качеству или хотя бы аккуратности Вашего кода. Так что осваивайте функции, пользуйтесь ими и делайте Ваш код читаемым, удобным и правильным!</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="-3-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="-5-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"theme": "readable",
+"highlight": "textmate",
+"split_by": "rmd",
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

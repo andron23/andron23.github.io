@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Часть 5 Базовая графика | R Course</title>
+  <meta name="description" content="5 Часть 5 Базовая графика | R Course" />
+  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Часть 5 Базовая графика | R Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Часть 5 Базовая графика | R Course" />
+  
+  
+  
+
+<meta name="author" content="Alexanyan Andron" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="-4-.html"/>
+<link rel="next" href="-6-if.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="-1-.html"><a href="-1-.html"><i class="fa fa-check"></i><b>1</b> Часть 1 Объекты и типы данных</a><ul>
+<li class="chapter" data-level="1.1" data-path="-1-.html"><a href="-1-.html#типы-данных-в-языке-r"><i class="fa fa-check"></i><b>1.1</b> Типы данных в языке R</a></li>
+<li class="chapter" data-level="1.2" data-path="-1-.html"><a href="-1-.html#создание-объектов"><i class="fa fa-check"></i><b>1.2</b> Создание объектов</a></li>
+<li class="chapter" data-level="1.3" data-path="-1-.html"><a href="-1-.html#структуры-данных"><i class="fa fa-check"></i><b>1.3</b> Структуры данных</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="-1-.html"><a href="-1-.html#однородные-структуры."><i class="fa fa-check"></i><b>1.3.1</b> Однородные структуры.</a></li>
+<li class="chapter" data-level="1.3.2" data-path="-1-.html"><a href="-1-.html#разнородные-структуры."><i class="fa fa-check"></i><b>1.3.2</b> Разнородные структуры.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="-1-.html"><a href="-1-.html#заключение-и-summary"><i class="fa fa-check"></i><b>1.4</b> Заключение и summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="-2-.html"><a href="-2-.html"><i class="fa fa-check"></i><b>2</b> Часть 2 Загрузка данных</a><ul>
+<li class="chapter" data-level="2.1" data-path="-2-.html"><a href="-2-.html#загрузка-txt-файлов"><i class="fa fa-check"></i><b>2.1</b> Загрузка txt-файлов</a></li>
+<li class="chapter" data-level="2.2" data-path="-2-.html"><a href="-2-.html#загрузка-csv-файлов"><i class="fa fa-check"></i><b>2.2</b> Загрузка csv-файлов</a></li>
+<li class="chapter" data-level="2.3" data-path="-2-.html"><a href="-2-.html#загрузка-xlsx-файлов"><i class="fa fa-check"></i><b>2.3</b> Загрузка xlsx-файлов</a></li>
+<li class="chapter" data-level="2.4" data-path="-2-.html"><a href="-2-.html#пакет-readr"><i class="fa fa-check"></i><b>2.4</b> Пакет readr</a></li>
+<li class="chapter" data-level="2.5" data-path="-2-.html"><a href="-2-.html#запись-в-файл"><i class="fa fa-check"></i><b>2.5</b> Запись в файл</a></li>
+<li class="chapter" data-level="2.6" data-path="-2-.html"><a href="-2-.html#как-быть-с-другими-форматами"><i class="fa fa-check"></i><b>2.6</b> Как быть с другими форматами?</a></li>
+<li class="chapter" data-level="2.7" data-path="-2-.html"><a href="-2-.html#полезные-добавления"><i class="fa fa-check"></i><b>2.7</b> Полезные добавления</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="-2-.html"><a href="-2-.html#работа-с-директориями"><i class="fa fa-check"></i><b>2.7.1</b> Работа с директориями</a></li>
+<li class="chapter" data-level="2.7.2" data-path="-2-.html"><a href="-2-.html#выбор-файла-вручную"><i class="fa fa-check"></i><b>2.7.2</b> Выбор файла вручную</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="-2-.html"><a href="-2-.html#заключение"><i class="fa fa-check"></i><b>2.8</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="-3-.html"><a href="-3-.html"><i class="fa fa-check"></i><b>3</b> Часть 3 Обработка и очистка данных</a><ul>
+<li class="chapter" data-level="3.1" data-path="-3-.html"><a href="-3-.html#подготовка-и-очистка-данных"><i class="fa fa-check"></i><b>3.1</b> Подготовка и очистка данных</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="-3-.html"><a href="-3-.html#gather-и-spread"><i class="fa fa-check"></i><b>3.1.1</b> gather() и spread()</a></li>
+<li class="chapter" data-level="3.1.2" data-path="-3-.html"><a href="-3-.html#конвейер"><i class="fa fa-check"></i><b>3.1.2</b> Конвейер %&gt;%</a></li>
+<li class="chapter" data-level="3.1.3" data-path="-3-.html"><a href="-3-.html#separate-и-unite"><i class="fa fa-check"></i><b>3.1.3</b> separate() и unite()</a></li>
+<li class="chapter" data-level="3.1.4" data-path="-3-.html"><a href="-3-.html#пропущенные-значения"><i class="fa fa-check"></i><b>3.1.4</b> Пропущенные значения</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="-3-.html"><a href="-3-.html#обработка-данных---dplyr"><i class="fa fa-check"></i><b>3.2</b> Обработка данных - dplyr</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="-3-.html"><a href="-3-.html#mutate-и-group_by"><i class="fa fa-check"></i><b>3.2.1</b> mutate() и group_by()</a></li>
+<li class="chapter" data-level="3.2.2" data-path="-3-.html"><a href="-3-.html#summarise"><i class="fa fa-check"></i><b>3.2.2</b> summarise()</a></li>
+<li class="chapter" data-level="3.2.3" data-path="-3-.html"><a href="-3-.html#filter-и-select"><i class="fa fa-check"></i><b>3.2.3</b> filter() и select()</a></li>
+<li class="chapter" data-level="3.2.4" data-path="-3-.html"><a href="-3-.html#arrange"><i class="fa fa-check"></i><b>3.2.4</b> arrange()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="-3-.html"><a href="-3-.html#заключение-1"><i class="fa fa-check"></i><b>3.3</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="-4-.html"><a href="-4-.html"><i class="fa fa-check"></i><b>4</b> Часть 4 Функции</a><ul>
+<li class="chapter" data-level="4.1" data-path="-4-.html"><a href="-4-.html#создание-пользовательских-функций"><i class="fa fa-check"></i><b>4.1</b> Создание пользовательских функций</a></li>
+<li class="chapter" data-level="4.2" data-path="-4-.html"><a href="-4-.html#анонимные-функции"><i class="fa fa-check"></i><b>4.2</b> Анонимные функции</a></li>
+<li class="chapter" data-level="4.3" data-path="-4-.html"><a href="-4-.html#заключение-2"><i class="fa fa-check"></i><b>4.3</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="-5-.html"><a href="-5-.html"><i class="fa fa-check"></i><b>5</b> Часть 5 Базовая графика</a><ul>
+<li class="chapter" data-level="5.1" data-path="-5-.html"><a href="-5-.html#линейные-графики-диаграмма-рассеяния-совмещение-графиков"><i class="fa fa-check"></i><b>5.1</b> Линейные графики, диаграмма рассеяния, совмещение графиков</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="-5-.html"><a href="-5-.html#линейные-графики"><i class="fa fa-check"></i><b>5.1.1</b> Линейные графики</a></li>
+<li class="chapter" data-level="5.1.2" data-path="-5-.html"><a href="-5-.html#совмещение-графиков"><i class="fa fa-check"></i><b>5.1.2</b> Совмещение графиков</a></li>
+<li class="chapter" data-level="5.1.3" data-path="-5-.html"><a href="-5-.html#диаграмма-рассеяния"><i class="fa fa-check"></i><b>5.1.3</b> Диаграмма рассеяния</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="-5-.html"><a href="-5-.html#гистограммы"><i class="fa fa-check"></i><b>5.2</b> Гистограммы</a></li>
+<li class="chapter" data-level="5.3" data-path="-5-.html"><a href="-5-.html#столбчатые-графики"><i class="fa fa-check"></i><b>5.3</b> Столбчатые графики</a></li>
+<li class="chapter" data-level="5.4" data-path="-5-.html"><a href="-5-.html#заключение-3"><i class="fa fa-check"></i><b>5.4</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="-6-if.html"><a href="-6-if.html"><i class="fa fa-check"></i><b>6</b> Часть 6 Циклы и оператор if</a><ul>
+<li class="chapter" data-level="6.1" data-path="-6-if.html"><a href="-6-if.html#оператор-if"><i class="fa fa-check"></i><b>6.1</b> Оператор if</a></li>
+<li class="chapter" data-level="6.2" data-path="-6-if.html"><a href="-6-if.html#цикл-for"><i class="fa fa-check"></i><b>6.2</b> Цикл for</a></li>
+<li class="chapter" data-level="6.3" data-path="-6-if.html"><a href="-6-if.html#цикл-while"><i class="fa fa-check"></i><b>6.3</b> Цикл while</a></li>
+<li class="chapter" data-level="6.4" data-path="-6-if.html"><a href="-6-if.html#заключение-4"><i class="fa fa-check"></i><b>6.4</b> Заключение</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="часть-5-базовая-графика" class="section level1">
+<h1><span class="header-section-number">5</span> Часть 5 Базовая графика</h1>
+<p>Мы разобрали все основные темы, необходимые для качественной первичной обработки датасета, но есть еще кое-что, без чего ни один аналитики и Data Scientist никак не сможет обойтись - визуализация. Язык R дает огромные возможности для построения графиков: и базовая двумерная графика, и продвинутая визуализация, и анимация, и 3D-графика, и форматирование таблиц, и многое-многое другое. Все это позволяет:</p>
+<ul>
+<li>делать правильные выводы, так как не всегда удобно ориентироваться только на числа</li>
+<li>представлять результаты своей работы коллегам и начальникам</li>
+<li>получать удовольствие от процесса, так как это красиво :)</li>
+</ul>
+<p>Для начала, естественно, мы начнем с базовых графических возможностей, которые доступны в стандартном пакете. Пусть Вас не смущает слово “базовые” - они не такие простые и примитивные как кажутся, и с их помощью можно строить вполне сносные визуализации!</p>
+<div id="линейные-графики-диаграмма-рассеяния-совмещение-графиков" class="section level2">
+<h2><span class="header-section-number">5.1</span> Линейные графики, диаграмма рассеяния, совмещение графиков</h2>
+<div id="линейные-графики" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Линейные графики</h3>
+<p>Чаще всего при работе с базовой графикой Вам придется сталкиваться с функцией <code>plot()</code>. Именно она позволяет графически отобразить зависимость одной переменной от другой, а это и лежит в основе большого количества визуальных элементов: например, линейных графиков или scatter plots (диаграмм рассеяния).</p>
+<p>Давайте обсудим, какие агрументы можно задать функции <code>plot()</code>, чтобы настроить нужную нам графику.</p>
+<ul>
+<li><code>x</code> - координаты точек независимой переменной</li>
+<li><code>y</code> - координаты точек зависимой переменной</li>
+<li><code>type</code> - тип графика (точечный график, линейчатый и так далее), об этом подробнее чуть ниже</li>
+<li><code>main</code> - заголовок графика</li>
+<li><code>sub</code> - подзаголовок графика</li>
+<li><code>xlab</code> - подпись оси <code>x</code></li>
+<li><code>ylab</code> - подпись оси <code>y</code></li>
+<li><code>asp</code> - соотношение сторон y/x (регулировка масштаба)</li>
+<li>прочие графические параметры, подробнее в <code>?par</code></li>
+</ul>
+<p>Лучше всего такие прикладные вещи изучать на примерах, так что давайте подгрузим стандартный датасет <code>JohnsonJohnson</code> и построим линейный график: как менялась стоимость акций JohnsonJohnson за период 1960 – 1980 в первом квартале.</p>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb272-1" data-line-number="1"><span class="kw">library</span>(tidyr) <span class="co">#загружаем tidyr для подготовки данных</span></a>
+<a class="sourceLine" id="cb272-2" data-line-number="2"><span class="kw">library</span>(timetk) <span class="co">#загружаем специальный пакет для преобразования timeseries в tibble</span></a>
+<a class="sourceLine" id="cb272-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb272-4" data-line-number="4">data &lt;-<span class="st"> </span></a>
+<a class="sourceLine" id="cb272-5" data-line-number="5"><span class="st">  </span><span class="kw">tk_tbl</span>(JohnsonJohnson) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#переводим формат timeseries в tibble</span></a>
+<a class="sourceLine" id="cb272-6" data-line-number="6"><span class="st">  </span><span class="kw">separate</span>(index, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;quarter&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#разбиваем образовавшийся столбец index на 2: год и квартал</span></a>
+<a class="sourceLine" id="cb272-7" data-line-number="7"><span class="st">  </span><span class="kw">spread</span>(quarter, value) <span class="co">#формируем из признака &quot;квартал&quot; столбцы таблицы</span></a>
+<a class="sourceLine" id="cb272-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb272-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb272-10" data-line-number="10"><span class="kw">plot</span>(<span class="dt">x =</span> data<span class="op">$</span>year, </a>
+<a class="sourceLine" id="cb272-11" data-line-number="11">     <span class="dt">y =</span> data<span class="op">$</span>Q1, </a>
+<a class="sourceLine" id="cb272-12" data-line-number="12">     <span class="dt">main  =</span> <span class="st">&quot;Стоимость акций за первый квартал&quot;</span>, </a>
+<a class="sourceLine" id="cb272-13" data-line-number="13">     <span class="dt">asp =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb272-14" data-line-number="14">     <span class="dt">xlab =</span> <span class="st">&quot;Год&quot;</span>, </a>
+<a class="sourceLine" id="cb272-15" data-line-number="15">     <span class="dt">ylab =</span> <span class="st">&quot;Стоимость акций в 1 квартале&quot;</span>, </a>
+<a class="sourceLine" id="cb272-16" data-line-number="16">     <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<p><img src="R-Course-Full_files/figure-html/JohnsonJohnson_linear-1.png" width="672" /></p>
+<p>Мы построили самый обычный линейный график; добавили на него заголовок, подписи к осям, указали масштаб. В принципе, ничего сложного - все достаточно понятно.</p>
+<p>Давайте теперь попробуем поварьировать параметр <code>type</code> - тип графика. Какие вообще основные типы могут нам встретиться?</p>
+<ul>
+<li><code>p</code> - точки</li>
+<li><code>l</code> - линии</li>
+<li><code>b</code> - точки и линии</li>
+<li><code>c</code> - как и <code>b</code>, но без точек</li>
+<li><code>o</code> - точки на линиях</li>
+<li><code>s</code> - ступеньки</li>
+<li><code>h</code> - горизонтальные линии</li>
+<li><code>n</code> - без построения графика</li>
+</ul>
+<p>Вот, для примера укажем параметр <code>o</code> в нашем графике.</p>
+<pre class='prettyprint'><code>plot(x = data$year, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = data$Q1, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main &nbsp;= "Стоимость акций за первый квартал", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asp = 1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlab = "Год", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ylab = "Стоимость акций в 1 квартале", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='background-color:#ffff7f'>type = "o"</span>)</code></pre>
+<p><img src="R-Course-Full_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Тот же самый график можно было построить и не указывая агрументы <code>x</code> и <code>y</code> в явном виде, а указав функциональную зависимость (т.е. как <code>y</code> зависит от <code>x</code>).</p>
+<pre class='prettyprint'><code>plot(<span style='background-color:#ffff7f'>data$Q1~data$year</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main &nbsp;= "Стоимость акций за первый квартал", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asp = 1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlab = "Год", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ylab = "Стоимость акций в 1 квартале", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type = "o")</code></pre>
+<p><img src="R-Course-Full_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Помимо типа графика, мы имеем возможность менять еще <em>толщину</em> и <em>тип</em> линии с помощью параметров <code>lwd</code> и <code>lty</code>, соответственно. С толщиной все понятно - этот параметр указывается числом (не обязательно целым) и чем больше число, тем толще линия. А для <code>lty</code> раскладка такая:</p>
+<ul>
+<li><code>lty = 1</code> - сплошная линия</li>
+<li><code>lty = 2</code> - прерывистая линия</li>
+<li><code>lty = 3</code> - точечная линия</li>
+<li><code>lty = 4</code> - чередование точек и тире</li>
+<li><code>lty = 5</code> - длинные прерывистые тире</li>
+<li><code>lty = 6</code> - чередование длинного и короткого тире</li>
+</ul>
+<p>Давайте для примера сделаем предыдущий график с <code>type = 'l'</code> и добавим толщину, а тип линии сделаем <em>длинные прерывистые тире</em>.</p>
+<pre class='prettyprint'><code>plot(data$Q1~data$year,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main &nbsp;= "Стоимость акций за первый квартал", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asp = 1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlab = "Год", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ylab = "Стоимость акций в 1 квартале", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='background-color:#ffff7f'>type = "l"</span>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='background-color:#ffff7f'>lwd = 2</span>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='background-color:#ffff7f'>lty = 5</span>)</code></pre>
+<p><img src="R-Course-Full_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="совмещение-графиков" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Совмещение графиков</h3>
+<p>Для совмещения графиков с использованием базовых инструментов R необходимо следовать общему принципу: <em>нарисовать первый график с помощью <code>plot()</code>, а потом наложить дополнительные ряды с помощью <code>points()</code> и <code>lines</code></em>. Есть и еще один вариант - можно <em>создать пустой график с помощью <code>plot()</code>, а потом добавить все ряды отдельно</em>.</p>
+<p>Использовать функции <code>points()</code> и <code>lines</code> очень просто - они, фактически, выполняют такой же функционал, что и <code>plot()</code>, просто в более упрощенном виде: <code>points()</code> строит только точки, а <code>lines</code> только линии.</p>
+<p>Давайте добавим на наш график данные еще за второй квартал и разделим два графика цветом, чтобы не путать их.</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb273-1" data-line-number="1"><span class="kw">plot</span>(data<span class="op">$</span>Q1<span class="op">~</span>data<span class="op">$</span>year,</a>
+<a class="sourceLine" id="cb273-2" data-line-number="2">     <span class="dt">main  =</span> <span class="st">&quot;Стоимость акций за первый и второй квартал&quot;</span>, </a>
+<a class="sourceLine" id="cb273-3" data-line-number="3">     <span class="dt">asp =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb273-4" data-line-number="4">     <span class="dt">xlab =</span> <span class="st">&quot;Год&quot;</span>, </a>
+<a class="sourceLine" id="cb273-5" data-line-number="5">     <span class="dt">ylab =</span> <span class="st">&quot;Стоимость акций в 1 и 2 квартале&quot;</span>, </a>
+<a class="sourceLine" id="cb273-6" data-line-number="6">     <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="co">#строим график &quot;точки на линии&quot; </span></a>
+<a class="sourceLine" id="cb273-7" data-line-number="7">     <span class="dt">lwd =</span> <span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb273-8" data-line-number="8">     <span class="dt">col =</span> <span class="dv">2</span>) <span class="co">#задаем цвет 2</span></a>
+<a class="sourceLine" id="cb273-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb273-10" data-line-number="10"><span class="co">#строим точки за 2 квартал, цвет делаем &quot;lightgreen&quot;</span></a>
+<a class="sourceLine" id="cb273-11" data-line-number="11"><span class="kw">points</span>(data<span class="op">$</span>year, data<span class="op">$</span>Q2, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;lightgreen&quot;</span>)</a>
+<a class="sourceLine" id="cb273-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb273-13" data-line-number="13"><span class="co">#строим линию за 2 квартал, цвет делаем &quot;lightgreen&quot;</span></a>
+<a class="sourceLine" id="cb273-14" data-line-number="14"><span class="kw">lines</span>(data<span class="op">$</span>year, data<span class="op">$</span>Q2, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;lightgreen&quot;</span>)</a></code></pre></div>
+<p><img src="R-Course-Full_files/figure-html/JohnsonJohnson_linear_coop-1.png" width="672" /></p>
+<p>Таким образом, мы наложили 2 графика на один “холст” и при этом они идентичны с точки зрения внешнего вида. Совмещать и комбинировать графики при анализе данных нужно постоянно - по-другому не получится делать качественные выводы. В продвинутой графике, которую мы будем рассматривать позже, это делать намного удобнее, но для небольших задач и базовой графики вполне хватит: Вы сами видите, ничего сложного тут нет.</p>
+</div>
+<div id="диаграмма-рассеяния" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Диаграмма рассеяния</h3>
+<p>На самом деле, мы уже умеем строить scatter plots. Фактически, это график, который позволяет установить зависимость одной переменной от другой, если они не связаны явным образом. Например, в предыдущем случае, очевидно, что стоимость акций зависит от года - ведь это эволюционный процесс. А есть ли зависимость между стоимостью акицй в первом и третьем квартале каждого года? На этот вопрос позволяет ответить диаграмма рессеяния - по факту, обычный точечный график:</p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb274-1" data-line-number="1"><span class="kw">plot</span>(data<span class="op">$</span>Q3<span class="op">~</span>data<span class="op">$</span>Q1,</a>
+<a class="sourceLine" id="cb274-2" data-line-number="2">     <span class="dt">main  =</span> <span class="st">&quot;Зависимость стоимости акций в третьем квартале от первого&quot;</span>, </a>
+<a class="sourceLine" id="cb274-3" data-line-number="3">     <span class="dt">xlab =</span> <span class="st">&quot;1 квартал&quot;</span>, </a>
+<a class="sourceLine" id="cb274-4" data-line-number="4">     <span class="dt">ylab =</span> <span class="st">&quot;3 квартал&quot;</span>, </a>
+<a class="sourceLine" id="cb274-5" data-line-number="5">     <span class="dt">asp =</span> <span class="dv">1</span>, </a>
+<a class="sourceLine" id="cb274-6" data-line-number="6">     <span class="dt">col =</span> <span class="dv">3</span>,</a>
+<a class="sourceLine" id="cb274-7" data-line-number="7">     <span class="dt">lwd =</span> <span class="dv">2</span>,</a>
+<a class="sourceLine" id="cb274-8" data-line-number="8">     <span class="dt">cex =</span> <span class="dv">2</span>) </a></code></pre></div>
+<p><img src="R-Course-Full_files/figure-html/JohnsonJohnson_scatterplot-1.png" width="672" /></p>
+<p>Вы видите, что точки выстроились практически в прямую линию, что свидетельствует о сильной связи между переменными (что, конечно же, в данном примере логично).</p>
+<p>Хотелось бы обратить Ваше внимание на новый параметр, который мы до этого не использовали - <code>cex</code>. Он отвечает за размер точки. Еще один интересный параметр - <code>pch</code>, он регулирует тип точки. Что это значит? Это значит, что точка может быть совсем не точкой, а, например, звездочкой, квадратиком или значком <code>@</code>. Подробное описание можно найти в <code>?pch</code>, а мы проиллюстрируем примером:</p>
+<pre class='prettyprint'><code>plot(data$Q3~data$Q1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main &nbsp;= "Зависимость стоимости акций в третьем квартале от первого", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xlab = "1 квартал", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ylab = "3 квартал", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asp = 1, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;col = 3,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lwd = 2,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cex = 2, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='background-color:#ffff7f'>pch = 11</span>)</code></pre>
+<p><img src="R-Course-Full_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+</div>
+<div id="гистограммы" class="section level2">
+<h2><span class="header-section-number">5.2</span> Гистограммы</h2>
+<p>Итак, точечные и линейные графики мы обсудили, теперь пора поговорить о еще одном крайне распространенном визуальном элементе - гистограмме.</p>
+<p>Гистограмма распределения показывает, как измеряемая величина распределена по своим значениям (т.е. все возможные значения величины разбиваются на интервалы и вычисляется, сколько в каждый интервал попадает значений).</p>
+<p>Основные параметры, которые Вам понадобятся при работе с <code>hist()</code> - это параметр <code>breaks</code> для настройки ширины столбца и <code>col</code> для задания цвета. На самом деле, у функции <code>hist()</code> намного больше параметров, но мы сейчас их рассматривать отдельно не будем - подробнее (традиционно) можно узнать в <code>?hist</code>.</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb275-1" data-line-number="1"><span class="kw">hist</span>(data<span class="op">$</span>Q1, </a>
+<a class="sourceLine" id="cb275-2" data-line-number="2">     <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>, </a>
+<a class="sourceLine" id="cb275-3" data-line-number="3">     <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">5</span>), </a>
+<a class="sourceLine" id="cb275-4" data-line-number="4">     <span class="dt">xlab =</span> <span class="st">&quot;Стоимость акций&quot;</span>, </a>
+<a class="sourceLine" id="cb275-5" data-line-number="5">     <span class="dt">main =</span> <span class="st">&quot;Гистограмма стоимости акций за 1 квартал каждого года&quot;</span>)</a></code></pre></div>
+<p><img src="R-Course-Full_files/figure-html/JohnsonJohnson_hist-1.png" width="672" /></p>
+<p>Обратите внимание - мы сюда также добавили заголовк графика и подпись к оси <code>x</code>. Гистограмма - вещь обычно достаточно утилитарная и служит для проверки своих предположений/генерации промежуточных выводов, поэтому ее форматированию редко уделяют много внимания. Но если вдруг возникнет необходимости, то даже с помощью стандартных возможностей R Вы сможете построить визуально приятную гистограмму, которую не стыдно будет показать руководителю.</p>
+</div>
+<div id="столбчатые-графики" class="section level2">
+<h2><span class="header-section-number">5.3</span> Столбчатые графики</h2>
+<p>Barplots отображают числовые данные в виде “столбиков”. Это часто бывает полезно - например, когда нужно наглядно увидеть соотношение между величинами, сравнить несколько показателей или просто представить динамику какого-то процесса (как бы альтернатива обычному линейному графику).</p>
+<p>Построение столбчатых графиков происходит с помощью одноименной функции <code>barplot()</code>. те аргументы, которые мы уже разобрали, повторно проговаривать не будем, а сосредоточимся лучше на некоторых специфичных аргументах. Например, <code>names.arg</code> для озаглавливания столбцов на графике, <code>horiz</code> для изменения ориентации или <code>las</code> для форматирования подписей.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb276-1" data-line-number="1"><span class="kw">barplot</span>(data<span class="op">$</span>Q1, <span class="co">#строим barplot по стоимости акций за 1 квартал каждого года</span></a>
+<a class="sourceLine" id="cb276-2" data-line-number="2">        <span class="dt">names.arg =</span> data<span class="op">$</span>year, <span class="co">#в качестве подписей выбираем год</span></a>
+<a class="sourceLine" id="cb276-3" data-line-number="3">        <span class="dt">horiz =</span> <span class="ot">TRUE</span>, <span class="co">#делаем горизонтальную ориентацию </span></a>
+<a class="sourceLine" id="cb276-4" data-line-number="4">        <span class="dt">las =</span> <span class="dv">1</span>, <span class="co">#делаем подписи года строго горизонтальными, чтобы они влезли в график</span></a>
+<a class="sourceLine" id="cb276-5" data-line-number="5">        <span class="dt">main =</span> <span class="st">&quot;Стоимость акций за 1 квартал каждого года&quot;</span>, </a>
+<a class="sourceLine" id="cb276-6" data-line-number="6">        <span class="dt">xlab =</span> <span class="st">&quot;Стоимость акций&quot;</span>, </a>
+<a class="sourceLine" id="cb276-7" data-line-number="7">        <span class="dt">col =</span> <span class="dv">6</span>) </a></code></pre></div>
+<p><img src="R-Course-Full_files/figure-html/JohnsonJohnson_barplot-1.png" width="672" /></p>
+<p>Попробуйте у себя поварьировать параметры - если Вы, например, уберете <code>las = 1</code>, то подписи либо перестанут вмещаться на график, либо будут отображаться частично. Параметр <code>las</code> позволяет разместить подписи горизонтально, что делает график намного более симпатичным и читаемым.</p>
+<p>Вообще параметр <code>las</code> принимает следующие значения:</p>
+<ul>
+<li><code>0</code> - всегда параллельно осям, так стоит по умолчанию</li>
+<li><code>1</code> - всегда горизонтальные подписи</li>
+<li><code>2</code> - всегда перпендикулярно подписи</li>
+<li><code>3</code> - всегда вертикальные подписи</li>
+</ul>
+</div>
+<div id="заключение-3" class="section level2">
+<h2><span class="header-section-number">5.4</span> Заключение</h2>
+<p>В этом уроке мы обсудили базовую графику языка R. Естественно, возможности намного шире: Вы можете строить круговые диаграммы, делать подписи данных, добавлять легенды и многое-многое другое. Однако, мы не стали включать это в этот урок по одной простой причине - все это уже более сложные конструкции, и на мой взгляд, намного лучше будет работать с ними уже с использованием продвинутой графики пакета <code>ggplot2</code>. Той информации, которую мы разобрали тут, вполне достаточно, чтобы в процессе анализа строить простые графики лично для себя. Более же сложные вещи лучше делать сразу хорошими инструментами - зачем пахать огромное поле вручную, если есть специальная техника?…</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="-4-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="-6-if.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"theme": "readable",
+"highlight": "textmate",
+"split_by": "rmd",
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

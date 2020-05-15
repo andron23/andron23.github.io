@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Часть 3 Обработка и очистка данных | R Course</title>
+  <meta name="description" content="3 Часть 3 Обработка и очистка данных | R Course" />
+  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Часть 3 Обработка и очистка данных | R Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Часть 3 Обработка и очистка данных | R Course" />
+  
+  
+  
+
+<meta name="author" content="Alexanyan Andron" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="-2-.html"/>
+<link rel="next" href="-4-.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="-1-.html"><a href="-1-.html"><i class="fa fa-check"></i><b>1</b> Часть 1 Объекты и типы данных</a><ul>
+<li class="chapter" data-level="1.1" data-path="-1-.html"><a href="-1-.html#типы-данных-в-языке-r"><i class="fa fa-check"></i><b>1.1</b> Типы данных в языке R</a></li>
+<li class="chapter" data-level="1.2" data-path="-1-.html"><a href="-1-.html#создание-объектов"><i class="fa fa-check"></i><b>1.2</b> Создание объектов</a></li>
+<li class="chapter" data-level="1.3" data-path="-1-.html"><a href="-1-.html#структуры-данных"><i class="fa fa-check"></i><b>1.3</b> Структуры данных</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="-1-.html"><a href="-1-.html#однородные-структуры."><i class="fa fa-check"></i><b>1.3.1</b> Однородные структуры.</a></li>
+<li class="chapter" data-level="1.3.2" data-path="-1-.html"><a href="-1-.html#разнородные-структуры."><i class="fa fa-check"></i><b>1.3.2</b> Разнородные структуры.</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="-1-.html"><a href="-1-.html#заключение-и-summary"><i class="fa fa-check"></i><b>1.4</b> Заключение и summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="-2-.html"><a href="-2-.html"><i class="fa fa-check"></i><b>2</b> Часть 2 Загрузка данных</a><ul>
+<li class="chapter" data-level="2.1" data-path="-2-.html"><a href="-2-.html#загрузка-txt-файлов"><i class="fa fa-check"></i><b>2.1</b> Загрузка txt-файлов</a></li>
+<li class="chapter" data-level="2.2" data-path="-2-.html"><a href="-2-.html#загрузка-csv-файлов"><i class="fa fa-check"></i><b>2.2</b> Загрузка csv-файлов</a></li>
+<li class="chapter" data-level="2.3" data-path="-2-.html"><a href="-2-.html#загрузка-xlsx-файлов"><i class="fa fa-check"></i><b>2.3</b> Загрузка xlsx-файлов</a></li>
+<li class="chapter" data-level="2.4" data-path="-2-.html"><a href="-2-.html#пакет-readr"><i class="fa fa-check"></i><b>2.4</b> Пакет readr</a></li>
+<li class="chapter" data-level="2.5" data-path="-2-.html"><a href="-2-.html#запись-в-файл"><i class="fa fa-check"></i><b>2.5</b> Запись в файл</a></li>
+<li class="chapter" data-level="2.6" data-path="-2-.html"><a href="-2-.html#как-быть-с-другими-форматами"><i class="fa fa-check"></i><b>2.6</b> Как быть с другими форматами?</a></li>
+<li class="chapter" data-level="2.7" data-path="-2-.html"><a href="-2-.html#полезные-добавления"><i class="fa fa-check"></i><b>2.7</b> Полезные добавления</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="-2-.html"><a href="-2-.html#работа-с-директориями"><i class="fa fa-check"></i><b>2.7.1</b> Работа с директориями</a></li>
+<li class="chapter" data-level="2.7.2" data-path="-2-.html"><a href="-2-.html#выбор-файла-вручную"><i class="fa fa-check"></i><b>2.7.2</b> Выбор файла вручную</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="-2-.html"><a href="-2-.html#заключение"><i class="fa fa-check"></i><b>2.8</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="-3-.html"><a href="-3-.html"><i class="fa fa-check"></i><b>3</b> Часть 3 Обработка и очистка данных</a><ul>
+<li class="chapter" data-level="3.1" data-path="-3-.html"><a href="-3-.html#подготовка-и-очистка-данных"><i class="fa fa-check"></i><b>3.1</b> Подготовка и очистка данных</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="-3-.html"><a href="-3-.html#gather-и-spread"><i class="fa fa-check"></i><b>3.1.1</b> gather() и spread()</a></li>
+<li class="chapter" data-level="3.1.2" data-path="-3-.html"><a href="-3-.html#конвейер"><i class="fa fa-check"></i><b>3.1.2</b> Конвейер %&gt;%</a></li>
+<li class="chapter" data-level="3.1.3" data-path="-3-.html"><a href="-3-.html#separate-и-unite"><i class="fa fa-check"></i><b>3.1.3</b> separate() и unite()</a></li>
+<li class="chapter" data-level="3.1.4" data-path="-3-.html"><a href="-3-.html#пропущенные-значения"><i class="fa fa-check"></i><b>3.1.4</b> Пропущенные значения</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="-3-.html"><a href="-3-.html#обработка-данных---dplyr"><i class="fa fa-check"></i><b>3.2</b> Обработка данных - dplyr</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="-3-.html"><a href="-3-.html#mutate-и-group_by"><i class="fa fa-check"></i><b>3.2.1</b> mutate() и group_by()</a></li>
+<li class="chapter" data-level="3.2.2" data-path="-3-.html"><a href="-3-.html#summarise"><i class="fa fa-check"></i><b>3.2.2</b> summarise()</a></li>
+<li class="chapter" data-level="3.2.3" data-path="-3-.html"><a href="-3-.html#filter-и-select"><i class="fa fa-check"></i><b>3.2.3</b> filter() и select()</a></li>
+<li class="chapter" data-level="3.2.4" data-path="-3-.html"><a href="-3-.html#arrange"><i class="fa fa-check"></i><b>3.2.4</b> arrange()</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="-3-.html"><a href="-3-.html#заключение-1"><i class="fa fa-check"></i><b>3.3</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="-4-.html"><a href="-4-.html"><i class="fa fa-check"></i><b>4</b> Часть 4 Функции</a><ul>
+<li class="chapter" data-level="4.1" data-path="-4-.html"><a href="-4-.html#создание-пользовательских-функций"><i class="fa fa-check"></i><b>4.1</b> Создание пользовательских функций</a></li>
+<li class="chapter" data-level="4.2" data-path="-4-.html"><a href="-4-.html#анонимные-функции"><i class="fa fa-check"></i><b>4.2</b> Анонимные функции</a></li>
+<li class="chapter" data-level="4.3" data-path="-4-.html"><a href="-4-.html#заключение-2"><i class="fa fa-check"></i><b>4.3</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="-5-.html"><a href="-5-.html"><i class="fa fa-check"></i><b>5</b> Часть 5 Базовая графика</a><ul>
+<li class="chapter" data-level="5.1" data-path="-5-.html"><a href="-5-.html#линейные-графики-диаграмма-рассеяния-совмещение-графиков"><i class="fa fa-check"></i><b>5.1</b> Линейные графики, диаграмма рассеяния, совмещение графиков</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="-5-.html"><a href="-5-.html#линейные-графики"><i class="fa fa-check"></i><b>5.1.1</b> Линейные графики</a></li>
+<li class="chapter" data-level="5.1.2" data-path="-5-.html"><a href="-5-.html#совмещение-графиков"><i class="fa fa-check"></i><b>5.1.2</b> Совмещение графиков</a></li>
+<li class="chapter" data-level="5.1.3" data-path="-5-.html"><a href="-5-.html#диаграмма-рассеяния"><i class="fa fa-check"></i><b>5.1.3</b> Диаграмма рассеяния</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="-5-.html"><a href="-5-.html#гистограммы"><i class="fa fa-check"></i><b>5.2</b> Гистограммы</a></li>
+<li class="chapter" data-level="5.3" data-path="-5-.html"><a href="-5-.html#столбчатые-графики"><i class="fa fa-check"></i><b>5.3</b> Столбчатые графики</a></li>
+<li class="chapter" data-level="5.4" data-path="-5-.html"><a href="-5-.html#заключение-3"><i class="fa fa-check"></i><b>5.4</b> Заключение</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="-6-if.html"><a href="-6-if.html"><i class="fa fa-check"></i><b>6</b> Часть 6 Циклы и оператор if</a><ul>
+<li class="chapter" data-level="6.1" data-path="-6-if.html"><a href="-6-if.html#оператор-if"><i class="fa fa-check"></i><b>6.1</b> Оператор if</a></li>
+<li class="chapter" data-level="6.2" data-path="-6-if.html"><a href="-6-if.html#цикл-for"><i class="fa fa-check"></i><b>6.2</b> Цикл for</a></li>
+<li class="chapter" data-level="6.3" data-path="-6-if.html"><a href="-6-if.html#цикл-while"><i class="fa fa-check"></i><b>6.3</b> Цикл while</a></li>
+<li class="chapter" data-level="6.4" data-path="-6-if.html"><a href="-6-if.html#заключение-4"><i class="fa fa-check"></i><b>6.4</b> Заключение</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="часть-3-обработка-и-очистка-данных" class="section level1">
+<h1><span class="header-section-number">3</span> Часть 3 Обработка и очистка данных</h1>
+<p>В предыдущей лекции мы рассмотрели загрузку данных в систему для дальнейшей работы с ними. Теперь же давайте перейдем непосредственно к обработке! Мы рассмотрим два основных пункта:</p>
+<ul>
+<li>подготовка и очистка данных</li>
+<li>обработка данных</li>
+</ul>
+<p>Итак, начнем по порядку.</p>
+<div id="подготовка-и-очистка-данных" class="section level2">
+<h2><span class="header-section-number">3.1</span> Подготовка и очистка данных</h2>
+<p>Давайте для начала загрузим xlsx-файл, на примере которого мы будем разбирать функционал по подготовке данных. У нас будет несколько разных таблиц на разных листах Excel-книги, пока загрузим только данные с первого листа. Используем пакет <code>readxl</code>.</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&#39;Lesson 3.xlsx&#39;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb205-2" data-line-number="2">df</a></code></pre></div>
+<pre><code>## # A tibble: 4 x 5
+##   Lesson    Male_Class1 Female_Class1 Male_Class2 Female_Class2
+##   &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Math                2             3           0             9
+## 2 English             5             4           2             3
+## 3 Biology             7             6           6             1
+## 4 Chemistry           3             7           8             3</code></pre>
+<p>Итак, мы получили таблицу формата <code>tibble</code>. Пришло время поговорить об этом формате поподробней, так как вся последующая обработка будет происходить с помощью библиотеки <code>tidyverse</code>, где на <code>tibble</code> сделан основной упор.</p>
+<p>Что же такое <code>tibble</code> и чем он отличается, например, от стандартного фрейма? Основной смысл такой - <code>tibble</code> служит для хранения и удобной обработки <strong>“аккуратных данных”</strong>. Конечно, мы туда можем засунуть что угодно (как мы только что и сделали), но задача именно такая: свести все к концепции <strong>tidy data</strong>.</p>
+<p>Но что подразумевается под <strong>“аккуратными данными”</strong>? Есть три основных постулата:</p>
+<ol style="list-style-type: decimal">
+<li>Каждая переменная находится в отдельном столбце. Т.е. есть у нас пол - заведем отдельный столбец. Есть возраст - тоже отдельный. И так далее.</li>
+<li>Каждое наблюдение хранится в отдельной строке. Т.е. если у нас есть описание какого-то человека (например: имя, пол, возраст, личные данные), то мы должны для него выделить отдельную строку и никак иначе.</li>
+<li>Каждая отдельная сущность хранится в отдельной таблице. Т.е. если мы описываем котов и людей, не надо все заполнять в одну таблицу и ставить в поле “цвет хвоста” у людей NULL или что-то еще.</li>
+</ol>
+<p>Таким образом, все функции библиотеки <code>tidyverse</code> направлены на приведение наших данных к такому формату и дальнейшей работе с такими <code>tibble</code>.</p>
+<p>Ну что, немного теории мы получили, можем переходить к практике. Подключаем библиотеку <code>tidyr</code> из семейства <code>tidyverse</code> и начинаем работу с нашей “грязной” таблицей.</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" data-line-number="1"><span class="kw">library</span>(tidyr)</a></code></pre></div>
+<p>Для начала давайте повнимательней посмотрим на нашу таблицу еще разок и осознаем, что с ней не так. У нас есть строки с предметами, а также информация по количеству мальчиков и девочек, которые в разных классах этот предмет сдавали. Сразу же напрашивается замечание: у нас нарушен первый постулат - переменные пол и класс хранятся не в разных столбцах. Автоматически из-за этого нарушается и второй постулат - отдельные измерения хранятся не в отдельных строках, а как бы сгруппированы. С третьим постулатом все нормально, просто потому что у нас всего одна таблица :)</p>
+<p>Итак, наша ближайшая задача - привести таблицу к “аккуратному” виду. Как должна выглядеть наша таблица после всех преобразований? Очевидно, для соблюдения всех правил у нее должен быть такой формат:</p>
+<p><code>Предмет - Класс - Пол - Количество студентов</code></p>
+<p>При такой структуре мальчики из 1 класса и девочки из 1 класса, которые сдавали Химию будут находиться в разных строках таблицы.</p>
+<p>Давайте перед решением нашей задачи попытаемся ее разбить на структурные пункты (сама библиотека <code>tidyr</code> крайней проста, но для ее использования нужно привыкнуть к определенной логике). Нам нужно последовательно решить две проблемы:</p>
+<ul>
+<li>сделать так, чтобы наши заголовки “men_class1” и т.д. стали не переменными, а признаками - т.е. чтобы в каждой строке таблицы появился бы признак “men_class1” и т.д. Условно говоря, результат этого шага должен выглядеть так:</li>
+</ul>
+<pre><code>## # A tibble: 16 x 3
+##    Lesson    sex_class     count
+##    &lt;chr&gt;     &lt;chr&gt;         &lt;dbl&gt;
+##  1 Math      Male_Class1       2
+##  2 English   Male_Class1       5
+##  3 Biology   Male_Class1       7
+##  4 Chemistry Male_Class1       3
+##  5 Math      Female_Class1     3
+##  6 English   Female_Class1     4
+##  7 Biology   Female_Class1     6
+##  8 Chemistry Female_Class1     7
+##  9 Math      Male_Class2       0
+## 10 English   Male_Class2       2
+## 11 Biology   Male_Class2       6
+## 12 Chemistry Male_Class2       8
+## 13 Math      Female_Class2     9
+## 14 English   Female_Class2     3
+## 15 Biology   Female_Class2     1
+## 16 Chemistry Female_Class2     3</code></pre>
+<ul>
+<li>после этого, нам нужно разбить после <code>sex_class</code> на два отдельных поля: <code>sex</code> и <code>class</code>. Таким образом, итоговая таблица должна выглядеть так:</li>
+</ul>
+<pre><code>## # A tibble: 16 x 4
+##    Lesson    sex    class  count
+##    &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt;
+##  1 Math      Male   Class1     2
+##  2 English   Male   Class1     5
+##  3 Biology   Male   Class1     7
+##  4 Chemistry Male   Class1     3
+##  5 Math      Female Class1     3
+##  6 English   Female Class1     4
+##  7 Biology   Female Class1     6
+##  8 Chemistry Female Class1     7
+##  9 Math      Male   Class2     0
+## 10 English   Male   Class2     2
+## 11 Biology   Male   Class2     6
+## 12 Chemistry Male   Class2     8
+## 13 Math      Female Class2     9
+## 14 English   Female Class2     3
+## 15 Biology   Female Class2     1
+## 16 Chemistry Female Class2     3</code></pre>
+<p>Вот и все - за эти два несложных шага мы полностью приведем нашу таблицу к “аккуратному” виду. Для этого нам понадобятся две функции из пакета <code>tidyr</code> - <code>gather()</code> и <code>separate()</code></p>
+<div id="gather-и-spread" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> gather() и spread()</h3>
+<p>Поговорим подробнее про функцию <code>gather()</code>, так как именно она поможет нам в решении первого подпункта задачи.</p>
+<p>Функции <code>gather()</code> и <code>spread()</code> служат для реорганизации значений в таблицах.</p>
+<p>Функция <code>gather()</code> превращает названия столбцов в новый ключевой столбец, собирая соответствующие значения исходных столбцов в отдельный столбец значений. Словами это может выглядеть несколько путано, но давайте рассмотрим на нашем примере.</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" data-line-number="1"><span class="co">#Посмотрим структуру нашей таблицы. Нам нужно превратить названия столбцов &quot;men_class1&quot; и т.д. в отдельный столбец, а цифры, которые в этих столбцах содержаться, вывести в новый столбец под названием count. </span></a>
+<a class="sourceLine" id="cb210-2" data-line-number="2">df</a></code></pre></div>
+<pre><code>## # A tibble: 4 x 5
+##   Lesson    Male_Class1 Female_Class1 Male_Class2 Female_Class2
+##   &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;         &lt;dbl&gt;
+## 1 Math                2             3           0             9
+## 2 English             5             4           2             3
+## 3 Biology             7             6           6             1
+## 4 Chemistry           3             7           8             3</code></pre>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" data-line-number="1"><span class="co">#С помощью функции gather создаем новый столбец sex_class, в котором будут содержаться заголовки &quot;men_class1&quot; и т.д., а в столбце count - соответствующие значения</span></a>
+<a class="sourceLine" id="cb212-2" data-line-number="2">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">gather</span>(<span class="st">&#39;sex_class (key)&#39;</span>, <span class="st">&#39;count (value)&#39;</span>, <span class="op">-</span>Lesson)</a></code></pre></div>
+<pre><code>## # A tibble: 16 x 3
+##    Lesson    `sex_class (key)` `count (value)`
+##    &lt;chr&gt;     &lt;chr&gt;                       &lt;dbl&gt;
+##  1 Math      Male_Class1                     2
+##  2 English   Male_Class1                     5
+##  3 Biology   Male_Class1                     7
+##  4 Chemistry Male_Class1                     3
+##  5 Math      Female_Class1                   3
+##  6 English   Female_Class1                   4
+##  7 Biology   Female_Class1                   6
+##  8 Chemistry Female_Class1                   7
+##  9 Math      Male_Class2                     0
+## 10 English   Male_Class2                     2
+## 11 Biology   Male_Class2                     6
+## 12 Chemistry Male_Class2                     8
+## 13 Math      Female_Class2                   9
+## 14 English   Female_Class2                   3
+## 15 Biology   Female_Class2                   1
+## 16 Chemistry Female_Class2                   3</code></pre>
+<p>Названия столбцов взяты в кавычки, так как я дополнительно в скобках еще указал тип столбца: <code>key</code> у столбца с названиями старых столбцов, <code>value</code> у столбца со значениями. Если бы названия состояли из одного слова, кавычки можно было бы опустить:</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" data-line-number="1">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">gather</span>(sex_class, count, <span class="op">-</span>Lesson)</a></code></pre></div>
+<p>Аргумент <code>-Lesson</code> говорит о том, что столбец <code>Lesson</code> из исходной таблицы в преобразованиях не участвует и остается неизменным.</p>
+<p>Итак, мы видим, что первая часть задачи решилась - теперь наша таблица состоит из трех столбцов: Предмет, Пол-Класс и Количество людей. Но перед тем, как переходить к решению второй части задачи, давайте обсудим еще функцию <code>spread()</code>. Думаю, уже очевидно, что эта функция - полная противоположность функции <code>gather()</code> и она формирует из уникальных значений какого-то ключевого (<code>key</code>) столбца отдельные столбцы со значениями из <code>value</code> столбца. Можно продемонстрировать это на нашем примере:</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" data-line-number="1"><span class="co">#Сворачиваем исходную таблицу, как мы делали это раньше и сохраняем ее в переменную df_to_spread</span></a>
+<a class="sourceLine" id="cb215-2" data-line-number="2">df_to_spread &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">gather</span>(sex_class, count, <span class="op">-</span>Lesson)</a>
+<a class="sourceLine" id="cb215-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb215-4" data-line-number="4"><span class="co">#Расформируем обработанную таблицу df_to_spread обратно - сделаем из столбца `sex_class (key)` 4 отдельных столбца со значениями из `count (value)`</span></a>
+<a class="sourceLine" id="cb215-5" data-line-number="5">df_to_spread <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">spread</span>(sex_class, count)</a></code></pre></div>
+<pre><code>## # A tibble: 4 x 5
+##   Lesson    Female_Class1 Female_Class2 Male_Class1 Male_Class2
+##   &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+## 1 Biology               6             1           7           6
+## 2 Chemistry             7             3           3           8
+## 3 English               4             3           5           2
+## 4 Math                  3             9           2           0</code></pre>
+<p>Наверно, постепенно логика Вам уже становится понятна :) Идем дальше.</p>
+</div>
+<div id="конвейер" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Конвейер %&gt;%</h3>
+<p>Перед тем, как перейти наконец к решению второго пункта задачи, давайте остановимся на конвейере. Вы могли заметить, что в коде выше я использовал конструкцию с символами <code>%&gt;%</code>. Скорее всего, по смыслу Вы уже догадались, что это и зачем нужно, но стоит проговорить отдельно.</p>
+<p><code>%&gt;%</code> - это конвейер. Он позволяет не сохранять каждое действие в виде отдельной переменной, применяя каждый раз новую функцию к этой переменной, а просто передавать все как бы по конвейеру: сделал действие - передал результат на вход следующей функции - и так далее до бесконечности. Другими словами, эти две конструкции полностью одинаковые с точки зрения конечного результата, но вариант с конвейером намного удобней и понятней:</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb217-1" data-line-number="1"><span class="co">#Создаем вектор, логарифмируем каждый элемент и формируем фрейм из значений. Каждое действие - отдельная строка, в которой переменная а перезатирается. </span></a>
+<a class="sourceLine" id="cb217-2" data-line-number="2">a &lt;-<span class="st"> </span><span class="dv">5</span><span class="op">:</span><span class="dv">12</span></a>
+<a class="sourceLine" id="cb217-3" data-line-number="3">a &lt;-<span class="st"> </span>a<span class="op">**</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb217-4" data-line-number="4">a &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(a)</a>
+<a class="sourceLine" id="cb217-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb217-6" data-line-number="6"><span class="co">#Делаем все то же самое, только намного короче и понятней с помощью конвейера. </span></a>
+<a class="sourceLine" id="cb217-7" data-line-number="7">a &lt;-<span class="st"> </span><span class="dv">5</span><span class="op">:</span><span class="dv">12</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">log</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.frame</span>()</a></code></pre></div>
+<p>Это достаточно простой пример, а вот если Вы работаете с продвинутой графикой или даже обрабатываете данные с помощью библиотеки <code>tidyverse</code>, то конвейер для Вас просто необходим. Если Вы мне не верите, то очень быстро сами в этом убедитесь :)</p>
+</div>
+<div id="separate-и-unite" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> separate() и unite()</h3>
+<p>Итак, наконец-то мы можем перейти к решению второй части нашей задачи. Напомню - мы получили таблицу из трех столбцов, теперь нам осталось разбить столбец <code>sex_class</code> на два отдельных: <code>sex</code> и <code>class</code>.</p>
+<p>Эта задача совсем несложная и решается с помощью функции <code>separate()</code> все из того же пакета <code>tidyr</code>. Чтобы это сделать, достаточно указать 2 аргумента - <strong>какой столбец надо разбить</strong> и <strong>на какие столбцы надо разбить</strong>. Вот и все. Выглядеть в коде это будет так:</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" data-line-number="1"><span class="co">#Сохраняем результат предыдущего пункта задачи, перезаписывая переменную df</span></a>
+<a class="sourceLine" id="cb218-2" data-line-number="2">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">gather</span>(sex_class, count, <span class="op">-</span>Lesson)</a>
+<a class="sourceLine" id="cb218-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb218-4" data-line-number="4"><span class="co">#С помощью separate разбиваем sex_class на два столбца</span></a>
+<a class="sourceLine" id="cb218-5" data-line-number="5">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">separate</span>(sex_class, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;class&quot;</span>))</a></code></pre></div>
+<pre><code>## # A tibble: 16 x 4
+##    Lesson    sex    class  count
+##    &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt;
+##  1 Math      Male   Class1     2
+##  2 English   Male   Class1     5
+##  3 Biology   Male   Class1     7
+##  4 Chemistry Male   Class1     3
+##  5 Math      Female Class1     3
+##  6 English   Female Class1     4
+##  7 Biology   Female Class1     6
+##  8 Chemistry Female Class1     7
+##  9 Math      Male   Class2     0
+## 10 English   Male   Class2     2
+## 11 Biology   Male   Class2     6
+## 12 Chemistry Male   Class2     8
+## 13 Math      Female Class2     9
+## 14 English   Female Class2     3
+## 15 Biology   Female Class2     1
+## 16 Chemistry Female Class2     3</code></pre>
+<p>Мы видим, что у нас получилась таблица, в точности, как нам и нужна была. Использовав всего две функции, мы получили очень неплохой результат. А если еще красиво оформить это с помощью конвейера, то Ваш внутренний перфекционист просто возликует :)</p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" data-line-number="1"><span class="co">#загружаем исходные данные</span></a>
+<a class="sourceLine" id="cb220-2" data-line-number="2">df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&#39;Lesson 3.xlsx&#39;</span>, <span class="dt">sheet =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb220-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb220-4" data-line-number="4"><span class="co">#полностью решаем поставленную задачу</span></a>
+<a class="sourceLine" id="cb220-5" data-line-number="5">df &lt;-<span class="st"> </span>df <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb220-6" data-line-number="6"><span class="st">  </span><span class="kw">gather</span>(sex_class, count, <span class="op">-</span>Lesson) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb220-7" data-line-number="7"><span class="st">  </span><span class="kw">separate</span>(sex_class, <span class="dt">into =</span> <span class="kw">c</span>(<span class="st">&quot;sex&quot;</span>, <span class="st">&quot;class&quot;</span>))</a></code></pre></div>
+<p>Отлично, задача полностью решена!</p>
+<p>Однако, на этом функции в пакете <code>tidyr</code> не закончились. Давайте еще про них поговорим.</p>
+<p>Если есть <code>separate()</code>, то есть и обратная - <code>unite()</code>. Эта функция позволяет соединять значения из разных столбцов и формировать один новый. Посмотрим на нашем примере. Давайте из итоговой таблицы вернемся обратно на один шаг - опять объединим столбцы <code>sex</code> и <code>class</code> в один <code>sex_class</code>. Очевидно, что выглядеть это будет так:</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb221-1" data-line-number="1"><span class="co">#Объединяем sex и class в sex_class</span></a>
+<a class="sourceLine" id="cb221-2" data-line-number="2">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unite</span>(sex, class, <span class="dt">col =</span> sex_class)</a></code></pre></div>
+<pre><code>## # A tibble: 16 x 3
+##    Lesson    sex_class     count
+##    &lt;chr&gt;     &lt;chr&gt;         &lt;dbl&gt;
+##  1 Math      Male_Class1       2
+##  2 English   Male_Class1       5
+##  3 Biology   Male_Class1       7
+##  4 Chemistry Male_Class1       3
+##  5 Math      Female_Class1     3
+##  6 English   Female_Class1     4
+##  7 Biology   Female_Class1     6
+##  8 Chemistry Female_Class1     7
+##  9 Math      Male_Class2       0
+## 10 English   Male_Class2       2
+## 11 Biology   Male_Class2       6
+## 12 Chemistry Male_Class2       8
+## 13 Math      Female_Class2     9
+## 14 English   Female_Class2     3
+## 15 Biology   Female_Class2     1
+## 16 Chemistry Female_Class2     3</code></pre>
+</div>
+<div id="пропущенные-значения" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> Пропущенные значения</h3>
+<p>А как работать с таблицей, если она не полностью заполнена? Давайте загрузим такую таблицу со второго листа и попробуем что-нибудь с ней сделать.</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb223-1" data-line-number="1">df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&#39;Lesson 3.xlsx&#39;</span>, <span class="dt">sheet =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb223-2" data-line-number="2">df</a></code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##   Student  Grade
+##   &lt;chr&gt;    &lt;dbl&gt;
+## 1 Student1     3
+## 2 Student2     4
+## 3 Student3    NA
+## 4 Student4     4
+## 5 Student5    NA
+## 6 Student6     5</code></pre>
+<p>У нас есть несколько основных вариантов:</p>
+<ul>
+<li>просто удалить строки, где есть NA</li>
+<li>заполнить их самыми частыми значениями из столбца</li>
+<li>заполнить их какими-то конкретными значениями, которые нам подходят</li>
+</ul>
+<p>Для реализации всех этих подходов в пакете <code>tidyr</code> есть специальные функции. Давайте рассмотрим на примерах:</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb225-1" data-line-number="1"><span class="co">#Удаляем строки с пропусками с помощью drop_na()</span></a>
+<a class="sourceLine" id="cb225-2" data-line-number="2">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">drop_na</span>()</a></code></pre></div>
+<pre><code>## # A tibble: 4 x 2
+##   Student  Grade
+##   &lt;chr&gt;    &lt;dbl&gt;
+## 1 Student1     3
+## 2 Student2     4
+## 3 Student4     4
+## 4 Student6     5</code></pre>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb227-1" data-line-number="1"><span class="co">#Заполняем пропуски самыми частыми значениями в столбце Grade с помощью fill()</span></a>
+<a class="sourceLine" id="cb227-2" data-line-number="2">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">fill</span>(Grade)</a></code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##   Student  Grade
+##   &lt;chr&gt;    &lt;dbl&gt;
+## 1 Student1     3
+## 2 Student2     4
+## 3 Student3     4
+## 4 Student4     4
+## 5 Student5     4
+## 6 Student6     5</code></pre>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb229-1" data-line-number="1"><span class="co">#Заполняем пропуски двойками с помощью replace_na()</span></a>
+<a class="sourceLine" id="cb229-2" data-line-number="2">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">replace_na</span>(<span class="kw">list</span>(<span class="dt">Grade =</span> <span class="dv">2</span>))</a></code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##   Student  Grade
+##   &lt;chr&gt;    &lt;dbl&gt;
+## 1 Student1     3
+## 2 Student2     4
+## 3 Student3     2
+## 4 Student4     4
+## 5 Student5     2
+## 6 Student6     5</code></pre>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb231-1" data-line-number="1"><span class="co">#Заполняем пропуски средним значением столбца Grade (предварительно убрав пропуски) с помощью replace_na()</span></a>
+<a class="sourceLine" id="cb231-2" data-line-number="2">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">replace_na</span>(<span class="kw">list</span>(<span class="dt">Grade =</span> <span class="kw">mean</span>(df<span class="op">$</span>Grade, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)))</a></code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##   Student  Grade
+##   &lt;chr&gt;    &lt;dbl&gt;
+## 1 Student1     3
+## 2 Student2     4
+## 3 Student3     4
+## 4 Student4     4
+## 5 Student5     4
+## 6 Student6     5</code></pre>
+</div>
+</div>
+<div id="обработка-данных---dplyr" class="section level2">
+<h2><span class="header-section-number">3.2</span> Обработка данных - dplyr</h2>
+<p>Итак, с очисткой и подготовкой данных мы более-менее разобрались - мы рассмотрели большое количество функций из пакета <code>tidyr</code>. Более подробную информацию, детализированное описание аргументов каждой функции и так далее Вы сможете узнать из официальной документации и во время “хождения по граблям”, решая задачи (как учебные, так и боевые).</p>
+<p>Теперь мы можем переходить к следующему этапу работы с нашими данными. Таблицы загружены, очищены, а что делать дальше? Нам от “сырых” данных толку мало - нам же надо создавать какие-то новые столбцы, считать характеристики, генерировать выводы и представлять результаты в виде отчетов. Для начала, нам понадобится библиотека <code>dplyr</code> все из того же семейства <code>tidyverse</code>.</p>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb233-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<p>В этот раз давайте немного отойдем от уже привычной схемы и будем изучать не загруженную из Excel-файла таблицу, а встроенную. Да, действительно, в R содержится достаточно большое количество встроенных таблиц, на примере которых легко изучать язык. Для того, чтобы подключить такую таблицу, достаточно набрать <code>data(название таблицы)</code>. Скорее всего, если Вы работаете в системе RStudio, Вам автоматически выскочит подсказка с названиями доступных таблиц. Нас же интересует конкретная - <code>airquality</code>.</p>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb237-1" data-line-number="1"><span class="co">#Загружаем данные</span></a>
+<a class="sourceLine" id="cb237-2" data-line-number="2"><span class="kw">data</span>(<span class="st">&quot;airquality&quot;</span>)</a>
+<a class="sourceLine" id="cb237-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb237-4" data-line-number="4"><span class="kw">str</span>(airquality)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    153 obs. of  6 variables:
+##  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
+##  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
+##  $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
+##  $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
+##  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
+##  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...</code></pre>
+<p>Мы видим, что наша таблица - фрейм, который состоит из численных данных (даты измерений и неких климатических измерений - уровень озона, уровень солнечной радиации, скорость ветра, температура). При этом, она содержит пропуски, а значит мы сможем применить только что полученные навыки по ликвидации этих пропусков.</p>
+<p>Для начала, давайте сформулируем себе задачи, чтобы понимать, что мы вообще должны получить в итоге:</p>
+<ol style="list-style-type: decimal">
+<li>заполним пропуски каждой величины средними значениями в зависимости от месяца</li>
+<li>найдем средние значения всех числовых характеристик в зависимости от месяца</li>
+<li>выберем данные только за май и посчитаем характеристики за один месяц</li>
+</ol>
+<p>Итак, начнем. Библиотеку мы подключили, можем перейти непосредственно к работе с данными.</p>
+<div id="mutate-и-group_by" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> mutate() и group_by()</h3>
+<p>Для того чтобы выполнить первый пункт нашего задания, давайте сначала посмотрим, а в каких столбцах у нас вообще присутствуют пропуски? Сделаем это с помощью уже известной нам функции <code>summary()</code>:</p>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb239-1" data-line-number="1"><span class="kw">summary</span>(airquality)</a></code></pre></div>
+<pre><code>##      Ozone           Solar.R           Wind             Temp      
+##  Min.   :  1.00   Min.   :  7.0   Min.   : 1.700   Min.   :56.00  
+##  1st Qu.: 18.00   1st Qu.:115.8   1st Qu.: 7.400   1st Qu.:72.00  
+##  Median : 31.50   Median :205.0   Median : 9.700   Median :79.00  
+##  Mean   : 42.13   Mean   :185.9   Mean   : 9.958   Mean   :77.88  
+##  3rd Qu.: 63.25   3rd Qu.:258.8   3rd Qu.:11.500   3rd Qu.:85.00  
+##  Max.   :168.00   Max.   :334.0   Max.   :20.700   Max.   :97.00  
+##  NA&#39;s   :37       NA&#39;s   :7                                       
+##      Month            Day      
+##  Min.   :5.000   Min.   : 1.0  
+##  1st Qu.:6.000   1st Qu.: 8.0  
+##  Median :7.000   Median :16.0  
+##  Mean   :6.993   Mean   :15.8  
+##  3rd Qu.:8.000   3rd Qu.:23.0  
+##  Max.   :9.000   Max.   :31.0  
+## </code></pre>
+<p>Мы видим, что <code>NA</code> у нас есть только в столбце с Озоном и Радиацией. Их и будем убирать. Мы договорились, что нам нужно заполнить каждый пропуск средним значением величины в конкретном месяце. То есть, если у нас пропуск в Озоне за май, то мы должны поставить туда среднее значение Озона за май. Если пропуск в Радиации за июль - ставим среднее значение Радиации именно за июль. С одной стороны, звучит несложно, но как это сделать максимально красиво? Будем пользоваться только функциями библиотеки <code>dplyr</code>.</p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb241-1" data-line-number="1">aq &lt;-<span class="st"> </span>airquality <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#берем исходную таблицу</span></a>
+<a class="sourceLine" id="cb241-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Month) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#группируем по месяцам</span></a>
+<a class="sourceLine" id="cb241-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Ozone =</span> <span class="kw">replace</span>(Ozone, <span class="kw">is.na</span>(Ozone), <span class="kw">mean</span>(Ozone, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#заполняем пропуски в Озоне средними значениями по месяцам</span></a>
+<a class="sourceLine" id="cb241-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Solar.R =</span> <span class="kw">replace</span>(Solar.R, <span class="kw">is.na</span>(Solar.R), <span class="kw">mean</span>(Solar.R, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))) <span class="co">#заполняем пропуски в Радиации средними значениями по месяцам</span></a>
+<a class="sourceLine" id="cb241-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb241-6" data-line-number="6">aq</a></code></pre></div>
+<pre><code>## # A tibble: 153 x 6
+## # Groups:   Month [5]
+##    Ozone Solar.R  Wind  Temp Month   Day
+##    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1  41      190    7.4    67     5     1
+##  2  36      118    8      72     5     2
+##  3  12      149   12.6    74     5     3
+##  4  18      313   11.5    62     5     4
+##  5  23.6    181.  14.3    56     5     5
+##  6  28      181.  14.9    66     5     6
+##  7  23      299    8.6    65     5     7
+##  8  19       99   13.8    59     5     8
+##  9   8       19   20.1    61     5     9
+## 10  23.6    194    8.6    69     5    10
+## # ... with 143 more rows</code></pre>
+<p>Вот и все, первое задание готово. Но что тут, собственно, произошло? Мы видим две новые для нас функции - <code>group_by()</code> и <code>mutate()</code>.</p>
+<p>Очевидно, что <code>group_by()</code> выполняет группировку таблицы по некоторому признаку (или нескольким признакам). В данном случае, мы разбиваем таблицу на 5 групп в зависимости от месяца. Здесь все просто, вряд ли возникнут какие-то недопонимания. Кстати, чтобы разгруппировать таблицу, нужно использовать функцию <code>ungroup()</code>.</p>
+<p>С функцией <code>mutate()</code> все не так очевидно. Назначение этой функции - создание новых вычислимых столбцов. Т.е. если у Вас есть таблица с величиной <code>А</code> и величиной <code>Б</code>, а Вы хотите добавить величину <code>С = А/Б</code>, то в этом Вам поможет <code>mutate</code>. Мы же здесь использовали эту функцию, не для создания новых столбцов, а для изменения уже существующего - мы как бы поменяли значения в некоторых ячейках столбцов <code>Ozone</code> и <code>Solar.R</code>.</p>
+<p>Хотелось бы отметить, что помимо функции <code>mutate()</code> существует еще ряд родственных функций, которые мы сейчас не рассматриваем, но они могут быть очень полезны. Например:</p>
+<ul>
+<li><code>transmutate()</code> - создает одни столбцы, другие удаляет</li>
+<li><code>mutate_all()</code> - применяет некоторую функцию ко всем столбцам</li>
+<li><code>mutate_if()</code> - применяет некоторую функцию к столбцам, которые удовлетворяют условию</li>
+<li><code>mutate_at()</code> - применяет некоторую функцию к выбранным столбцам</li>
+</ul>
+<p>Кстати говоря, нашу задачу было бы изящней решить с помощью <code>mutate_at()</code>, например, но мы пока с Вами не разбирали функции, так что оставим как есть - такой вариант тоже имеет право на существование.</p>
+<p>Теперь поподробней разберем то, как именно мы решили поставленную задачу. Все просто, вот эта запись: <code>mutate(Ozone = replace(Ozone, is.na(Ozone), mean(Ozone, na.rm = TRUE)))</code> значит: <em>в столбце Озон(<code>mutate Ozone</code>) заменяем те ячейки (<code>replace</code>), которые содержат пропуски (<code>is.na(Ozone)</code>) на среднее значение Озона по конкретному месяцу, исключая пропуски (<code>mean(Ozone, na.rm = TRUE)</code> + ранее <code>group_by(Month)</code>)</em>. Вот и все. Аналогично делаем и с Радиацией.</p>
+</div>
+<div id="summarise" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> summarise()</h3>
+<p>Давайте перейдем ко второму пункту задания - теперь нам нужно найти средние значения всех числовых характеристик для каждого месяца.</p>
+<p>Для вычисления подытогов (средних значений, максимальных/минимальных значений, сумм, медиан и так далее) по таблице существует специальная функция - <code>summarise()</code>. Пользоваться ей очень легко - достаточно указать <em>таблицу, которую обрабатываем</em>, <em>столбец, по которому считаем характеристику</em> и <em>саму характеристику (сумма, среднее и т.д.)</em>. Вот, например, как бы мы посчитали среднюю радиацию за весь период:</p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb243-1" data-line-number="1">aq <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb243-2" data-line-number="2"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#Разгруппируем, так как в предыдущем задании мы делали группировку по месяцам</span></a>
+<a class="sourceLine" id="cb243-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="kw">mean</span>(Solar.R)) <span class="co">#Считаем среднее</span></a></code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##   `mean(Solar.R)`
+##             &lt;dbl&gt;
+## 1            186.</code></pre>
+<p>Ничего сложного, согласитесь. Однако, наше задание чуть объемней - нам нужно посчитать среднее по все всем числовым характеристикам, а это 4 столбца. Неужели мы будем все 4 столбца указывать в качестве аргумента функции <code>summarise()</code>? Нет, зачем, можно сделать красивей! Как и в случае с <code>mutate()</code>, <code>summarise()</code> - целое семейство функций. Соответственно, мы можем просто воспользоваться функцией <code>summarise_all()</code> для решения нашей задачи:</p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" data-line-number="1"><span class="co">#Таблица aq сгруппирована по месяцам, так и оставляем, нам группировка нужна и в этом задании</span></a>
+<a class="sourceLine" id="cb245-2" data-line-number="2">aq[<span class="op">-</span><span class="dv">6</span>] <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#Убираем столбец с днями - он нам тут не нужен</span></a>
+<a class="sourceLine" id="cb245-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise_all</span>(<span class="kw">list</span>(mean)) <span class="co">#Считаем среднее по всем столбцам</span></a></code></pre></div>
+<pre><code>## # A tibble: 5 x 5
+##   Month Ozone Solar.R  Wind  Temp
+##   &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     5  23.6    181. 11.6   65.5
+## 2     6  29.4    190. 10.3   79.1
+## 3     7  59.1    216.  8.94  83.9
+## 4     8  60.0    172.  8.79  84.0
+## 5     9  31.4    167. 10.2   76.9</code></pre>
+<p>Мы получили в точности то, что и хотели - информацию о среднем значении каждой климатической характеристики по каждому месяцу.</p>
+</div>
+<div id="filter-и-select" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> filter() и select()</h3>
+<p>Давайте теперь перейдем к выполнению последнего пункта задания - расчет характеристик за май месяц. Давайте ограничимся двумя характеристиками (просто чтобы на экран влезло) - среднее и среднеквадратическое отклонение.</p>
+<p>Итак, для начала нам нужно отфильтровать данные по месяцу с помощью функции <code>filter()</code>, а потом посчитать итоги уже знакомой нам <code>summarise_all()</code>.</p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb247-1" data-line-number="1">aq <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb247-2" data-line-number="2"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#Убираем группировку</span></a>
+<a class="sourceLine" id="cb247-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(Month <span class="op">==</span><span class="st"> </span><span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#Фильтруем май</span></a>
+<a class="sourceLine" id="cb247-4" data-line-number="4"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(Month, Day)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#Убираем столбцы с месяцами и днями</span></a>
+<a class="sourceLine" id="cb247-5" data-line-number="5"><span class="st">  </span><span class="kw">summarise_all</span>(<span class="kw">list</span>(<span class="st">&quot;mean&quot;</span> =<span class="st"> </span>mean, <span class="st">&quot;sd&quot;</span> =<span class="st"> </span>sd)) <span class="co">#Считаем характеристики</span></a></code></pre></div>
+<pre><code>## # A tibble: 1 x 8
+##   Ozone_mean Solar.R_mean Wind_mean Temp_mean Ozone_sd Solar.R_sd Wind_sd
+##        &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;
+## 1       23.6         181.      11.6      65.5     20.3       107.    3.53
+## # ... with 1 more variable: Temp_sd &lt;dbl&gt;</code></pre>
+<p>Здесь мы встречаемся еще с двумя новыми функциями - <code>filter()</code> и <code>select()</code>. Их синтаксис очень интуитивно понятен - в общем случае, нам нужно указывать только <em>таблицу</em> и <em>что фильтруем/выбираем</em>. Если мы работаем с конвейером, как сейчас, то указывать нужно только <em>столбец, который надо убрать/оставить</em> или <em>условие фильтрации</em>. Вот, собственно, и все. Функция <code>summarise_all()</code> нам уже знакома, так что ее результат понятен - мы для каждого столбца считаем все указанные характеристики.</p>
+<p>Помимо <code>filter()</code> мы можем использовать еще ряд росдтвенных функций, например:</p>
+<ul>
+<li><code>distinct()</code> для извлечения уникальных строк</li>
+<li><code>sample_frac()</code> для извлечения случайного набора строк</li>
+<li><code>slice()</code> для извлечения заданных строк</li>
+</ul>
+</div>
+<div id="arrange" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> arrange()</h3>
+<p>Мы решили все наши задания, но хотелось бы обратить внимание еще на одну функцию библиотеки <code>dplyr</code> - функцию <code>arrange()</code>. Ее задача проста - она упорядочивает строки по значениям некоторого столбца. Синтакис крайне прост: <em>где упорядочиваем</em> и <em>по каким значениям упорядочиваем</em>. Вот пример:</p>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb249-1" data-line-number="1">aq <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb249-2" data-line-number="2"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#Убираем группировку</span></a>
+<a class="sourceLine" id="cb249-3" data-line-number="3"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(Month)) <span class="co">#Сортируем по убыванию месяца</span></a></code></pre></div>
+<pre><code>## # A tibble: 153 x 6
+##    Ozone Solar.R  Wind  Temp Month   Day
+##    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##  1    96     167   6.9    91     9     1
+##  2    78     197   5.1    92     9     2
+##  3    73     183   2.8    93     9     3
+##  4    91     189   4.6    93     9     4
+##  5    47      95   7.4    87     9     5
+##  6    32      92  15.5    84     9     6
+##  7    20     252  10.9    80     9     7
+##  8    23     220  10.3    78     9     8
+##  9    21     230  10.9    75     9     9
+## 10    24     259   9.7    73     9    10
+## # ... with 143 more rows</code></pre>
+</div>
+</div>
+<div id="заключение-1" class="section level2">
+<h2><span class="header-section-number">3.3</span> Заключение</h2>
+<p>За этот урок мы рассмотрели достаточно много функций из библиотек <code>tidyr</code> и <code>dplyr</code> - основных инструментов аналитика и исследователя при очистке и обработке данных. Естественно, мы осветили не все возможные функции и возможности, их намного больше. Однако, самое основное и нужное мы разобрали - остальное придет в процессе глубокого изучения и решения задачек.</p>
+<p>Мы накопили уже достаточно много материала, теперь нужно рассмотреть еще одну тему - функции, и мы готовы приступать к решению своих первых проектных задач с помощью языка R.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="-2-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="-4-.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"theme": "readable",
+"highlight": "textmate",
+"split_by": "rmd",
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
