@@ -1,0 +1,6 @@
+ID	Student	Group	Sex	Age
+1	Vasya	M15	M	18
+2	Petya	C13	M	18
+3	Kolya	M15	M	20
+4	Zhenya	C14	M	19
+5	Sveta	C13	F	19

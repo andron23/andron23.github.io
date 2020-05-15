@@ -1,0 +1,29 @@
+---
+title: "R Course"
+author: "Alexanyan Andron"
+output: 
+  bookdown::gitbook:
+    config:
+      theme: "readable"
+      highlight: "textmate"
+      split_by: rmd
+---
+
+```{r child = 'R Course Часть 1 Объекты и типы данных .Rmd'}
+```
+
+
+```{r child = 'R Course Часть 2 Загрузка данных.Rmd'}
+```
+
+```{r child = 'R Course Часть 3 -  Обработка и очистка данных.Rmd'}
+```
+
+```{r child = 'R Course Часть 4 Функции.Rmd'}
+```
+
+```{r child = 'R Course Часть 5 Базовая графика.Rmd'}
+```
+
+```{r child = 'R Course Часть 6 Циклы и оператор if.Rmd'}
+```
